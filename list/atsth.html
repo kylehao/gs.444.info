@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '0435 安徒生童话001丑小鸭01',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0435 安徒生童话001丑小鸭01.mp3'},
+{title : '',singer : '0436 安徒生童话002丑小鸭02',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0436 安徒生童话002丑小鸭02.mp3'},
+{title : '',singer : '0437 安徒生童话003丑小鸭03',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0437 安徒生童话003丑小鸭03.mp3'},
+{title : '',singer : '0438 安徒生童话004豌豆上的公主04',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0438 安徒生童话004豌豆上的公主04.mp3'},
+{title : '',singer : '0439 安徒生童话005冰雪女王05',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0439 安徒生童话005冰雪女王05.mp3'},
+{title : '',singer : '0440 安徒生童话006冰雪女王06',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0440 安徒生童话006冰雪女王06.mp3'},
+{title : '',singer : '0441 安徒生童话007冰雪女王07',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0441 安徒生童话007冰雪女王07.mp3'},
+{title : '',singer : '0442 安徒生童话008冰雪女王08',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0442 安徒生童话008冰雪女王08.mp3'},
+{title : '',singer : '0443 安徒生童话009冰雪女王09',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0443 安徒生童话009冰雪女王09.mp3'},
+{title : '',singer : '0444 安徒生童话010冰雪女王10',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0444 安徒生童话010冰雪女王10.mp3'},
+{title : '',singer : '0445 安徒生童话011冰雪女王011',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0445 安徒生童话011冰雪女王011.mp3'},
+{title : '',singer : '0446 安徒生童话012海的女儿012',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0446 安徒生童话012海的女儿012.mp3'},
+{title : '',singer : '0447 安徒生童话013海的女儿013',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0447 安徒生童话013海的女儿013.mp3'},
+{title : '',singer : '0448 安徒生童话014海的女儿014',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0448 安徒生童话014海的女儿014.mp3'},
+{title : '',singer : '0449 安徒生童话015海的女儿015',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0449 安徒生童话015海的女儿015.mp3'},
+{title : '',singer : '0450 安徒生童话016皇帝的新装016',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0450 安徒生童话016皇帝的新装016.mp3'},
+{title : '',singer : '0451 安徒生童话017野天鹅017',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0451 安徒生童话017野天鹅017.mp3'},
+{title : '',singer : '0452 安徒生童话018野天鹅018',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0452 安徒生童话018野天鹅018.mp3'},
+{title : '',singer : '0453 安徒生童话019野天鹅019',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0453 安徒生童话019野天鹅019.mp3'},
+{title : '',singer : '0454 安徒生童话020打火匣020',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0454 安徒生童话020打火匣020.mp3'},
+{title : '',singer : '0455 安徒生童话021打火匣021',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0455 安徒生童话021打火匣021.mp3'},
+{title : '',singer : '0456 安徒生童话022打火匣022',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0456 安徒生童话022打火匣022.mp3'},
+{title : '',singer : '0457 安徒生童话023小克劳斯和大克劳斯023',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0457 安徒生童话023小克劳斯和大克劳斯023.mp3'},
+{title : '',singer : '0458 安徒生童话024小克劳斯和大克劳斯024',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0458 安徒生童话024小克劳斯和大克劳斯024.mp3'},
+{title : '',singer : '0459 安徒生童话025小克劳斯和大克劳斯025',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0459 安徒生童话025小克劳斯和大克劳斯025.mp3'},
+{title : '',singer : '0460 安徒生童话026小克劳斯和大克劳斯026',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0460 安徒生童话026小克劳斯和大克劳斯026.mp3'},
+{title : '',singer : '0461 安徒生童话027拇指姑娘027',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0461 安徒生童话027拇指姑娘027.mp3'},
+{title : '',singer : '0462 安徒生童话028拇指姑娘028',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0462 安徒生童话028拇指姑娘028.mp3'},
+{title : '',singer : '0463 安徒生童话029拇指姑娘029',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0463 安徒生童话029拇指姑娘029.mp3'},
+{title : '',singer : '0464 安徒生童话030顽皮的孩子030',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0464 安徒生童话030顽皮的孩子030.mp3'},
+{title : '',singer : '0465 安徒生童话031旅伴031',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0465 安徒生童话031旅伴031.mp3'},
+{title : '',singer : '0466 安徒生童话032旅伴032',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0466 安徒生童话032旅伴032.mp3'},
+{title : '',singer : '0467 安徒生童话033旅伴033',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0467 安徒生童话033旅伴033.mp3'},
+{title : '',singer : '0468 安徒生童话034旅伴034',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0468 安徒生童话034旅伴034.mp3'},
+{title : '',singer : '0469 安徒生童话035雏菊035',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0469 安徒生童话035雏菊035.mp3'},
+{title : '',singer : '0470 安徒生童话036坚定的锡兵036',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0470 安徒生童话036坚定的锡兵036.mp3'},
+{title : '',singer : '0471 安徒生童话037坚飞箱038',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0471 安徒生童话037坚飞箱038.mp3'},
+{title : '',singer : '0472 安徒生童话038天国的花园037',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0472 安徒生童话038天国的花园037.mp3'},
+{title : '',singer : '0473 安徒生童话039鹳鸟039',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0473 安徒生童话039鹳鸟039.mp3'},
+{title : '',singer : '0474 安徒生童话040铜猪040',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0474 安徒生童话040铜猪040.mp3'},
+{title : '',singer : '0475 安徒生童话041铜猪041',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0475 安徒生童话041铜猪041.mp3'},
+{title : '',singer : '0476 安徒生童话042玫瑰花精042',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0476 安徒生童话042玫瑰花精042.mp3'},
+{title : '',singer : '0477 安徒生童话043猪倌043',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0477 安徒生童话043猪倌043.mp3'},
+{title : '',singer : '0478 安徒生童话044接骨木树妈妈044',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0478 安徒生童话044接骨木树妈妈044.mp3'},
+{title : '',singer : '0479 安徒生童话045接骨木树妈妈045',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0479 安徒生童话045接骨木树妈妈045.mp3'},
+{title : '',singer : '0480 安徒生童话046织布针046',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0480 安徒生童话046织布针046.mp3'},
+{title : '',singer : '0481 安徒生童话047钟声047',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0481 安徒生童话047钟声047.mp3'},
+{title : '',singer : '0482 安徒生童话048钟声048',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0482 安徒生童话048钟声048.mp3'},
+{title : '',singer : '0483 安徒生童话049祖母049',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0483 安徒生童话049祖母049.mp3'},
+{title : '',singer : '0484 安徒生童话050妖山050',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0484 安徒生童话050妖山050.mp3'},
+{title : '',singer : '0485 安徒生童话051妖山051',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0485 安徒生童话051妖山051.mp3'},
+{title : '',singer : '0486 安徒生童话052跳高者052',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0486 安徒生童话052跳高者052.mp3'},
+{title : '',singer : '0487 安徒生童话053卖火柴的小女孩053',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0487 安徒生童话053卖火柴的小女孩053.mp3'},
+{title : '',singer : '0488 安徒生童话054恋人054',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0488 安徒生童话054恋人054.mp3'},
+{title : '',singer : '0489 安徒生童话055枞树055',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0489 安徒生童话055枞树055.mp3'},
+{title : '',singer : '0490 安徒生童话056枞树056',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0490 安徒生童话056枞树056.mp3'},
+{title : '',singer : '0491 安徒生童话057枞树057',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0491 安徒生童话057枞树057.mp3'},
+{title : '',singer : '0492 安徒生童话058牧羊女和扫烟囱的人058',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0492 安徒生童话058牧羊女和扫烟囱的人058.mp3'},
+{title : '',singer : '0493 安徒生童话059丹麦人荷尔格059',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0493 安徒生童话059丹麦人荷尔格059.mp3'},
+{title : '',singer : '0494 安徒生童话060城堡上的一幅画060',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0494 安徒生童话060城堡上的一幅画060.mp3'},
+{title : '',singer : '0495 安徒生童话061瓦尔都窗前的一瞥061',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0495 安徒生童话061瓦尔都窗前的一瞥061.mp3'},
+{title : '',singer : '0496 安徒生童话062老路灯062',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0496 安徒生童话062老路灯062.mp3'},
+{title : '',singer : '0497 安徒生童话063老路灯063',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0497 安徒生童话063老路灯063.mp3'},
+{title : '',singer : '0498 安徒生童话064邻居们064',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0498 安徒生童话064邻居们064.mp3'},
+{title : '',singer : '0499 安徒生童话065邻居们065',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0499 安徒生童话065邻居们065.mp3'},
+{title : '',singer : '0500 安徒生童话066邻居们066',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0500 安徒生童话066邻居们066.mp3'},
+{title : '',singer : '0501 安徒生童话067小杜壳067',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0501 安徒生童话067小杜壳067.mp3'},
+{title : '',singer : '0502 安徒生童话068影子068上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0502 安徒生童话068影子068上.mp3'},
+{title : '',singer : '0503 安徒生童话069影子069中',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0503 安徒生童话069影子069中.mp3'},
+{title : '',singer : '0504 安徒生童话070影子070下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0504 安徒生童话070影子070下.mp3'},
+{title : '',singer : '0505 安徒生童话071老房子071上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0505 安徒生童话071老房子071上.mp3'},
+{title : '',singer : '0506 安徒生童话072老房子072下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0506 安徒生童话072老房子072下.mp3'},
+{title : '',singer : '0507 安徒生童话073一滴水073',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0507 安徒生童话073一滴水073.mp3'},
+{title : '',singer : '0508 安徒生童话074幸福的一家074',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0508 安徒生童话074幸福的一家074.mp3'},
+{title : '',singer : '0509 安徒生童话075母亲的故事075上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0509 安徒生童话075母亲的故事075上.mp3'},
+{title : '',singer : '0510 安徒生童话076母亲的故事076下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0510 安徒生童话076母亲的故事076下.mp3'},
+{title : '',singer : '0511 安徒生童话077衬衫领子077',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0511 安徒生童话077衬衫领子077.mp3'},
+{title : '',singer : '0512 安徒生童话078亚麻078',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0512 安徒生童话078亚麻078.mp3'},
+{title : '',singer : '0513 安徒生童话079凤凰079',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0513 安徒生童话079凤凰079.mp3'},
+{title : '',singer : '0514 安徒生童话080一个故事080上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0514 安徒生童话080一个故事080上.mp3'},
+{title : '',singer : '0515 安徒生童话081一个故事081下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0515 安徒生童话081一个故事081下.mp3'},
+{title : '',singer : '0516 安徒生童话082一本不说话的书082',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0516 安徒生童话082一本不说话的书082.mp3'},
+{title : '',singer : '0517 安徒生童话083区别083',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0517 安徒生童话083区别083.mp3'},
+{title : '',singer : '0518 安徒生童话084老墓碑084',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0518 安徒生童话084老墓碑084.mp3'},
+{title : '',singer : '0519 安徒生童话085世界上最美的一朵玫瑰花085',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0519 安徒生童话085世界上最美的一朵玫瑰花085.mp3'},
+{title : '',singer : '0520 安徒生童话086一年的故事086上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0520 安徒生童话086一年的故事086上.mp3'},
+{title : '',singer : '0521 安徒生童话087一年的故事087中',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0521 安徒生童话087一年的故事087中.mp3'},
+{title : '',singer : '0522 安徒生童话088一年的故事088下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0522 安徒生童话088一年的故事088下.mp3'},
+{title : '',singer : '0523 安徒生童话089最后一天089',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0523 安徒生童话089最后一天089.mp3'},
+{title : '',singer : '0524 安徒生童话090完全是真的090',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0524 安徒生童话090完全是真的090.mp3'},
+{title : '',singer : '0525 安徒生童话091天鹅的窝091',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0525 安徒生童话091天鹅的窝091.mp3'},
+{title : '',singer : '0526 安徒生童话092好心境092',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0526 安徒生童话092好心境092.mp3'},
+{title : '',singer : '0527 安徒生童话093伤心事093',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0527 安徒生童话093伤心事093.mp3'},
+{title : '',singer : '0528 安徒生童话094各得其所094上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0528 安徒生童话094各得其所094上.mp3'},
+{title : '',singer : '0529 安徒生童话095各得其所095下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0529 安徒生童话095各得其所095下.mp3'},
+{title : '',singer : '0530 安徒生童话096小鬼和小商人096',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0530 安徒生童话096小鬼和小商人096.mp3'},
+{title : '',singer : '0531 安徒生童话097一千年之内097',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0531 安徒生童话097一千年之内097.mp3'},
+{title : '',singer : '0532 安徒生童话098柳树下的梦098',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0532 安徒生童话098柳树下的梦098.mp3'},
+{title : '',singer : '0533 安徒生童话099柳树下的梦099',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0533 安徒生童话099柳树下的梦099.mp3'},
+{title : '',singer : '0534 安徒生童话100柳树下的梦100',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0534 安徒生童话100柳树下的梦100.mp3'},
+{title : '',singer : '0535 安徒生童话101柳树下的梦101',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0535 安徒生童话101柳树下的梦101.mp3'},
+{title : '',singer : '0536 安徒生童话102一个豆荚里的五粒豆子102',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0536 安徒生童话102一个豆荚里的五粒豆子102.mp3'},
+{title : '',singer : '0537 安徒生童话103天生落下来的一片叶子103',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0537 安徒生童话103天生落下来的一片叶子103.mp3'},
+{title : '',singer : '0538 安徒生童话104她是一个废物104上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0538 安徒生童话104她是一个废物104上.mp3'},
+{title : '',singer : '0539 安徒生童话105她是一个废物105下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0539 安徒生童话105她是一个废物105下.mp3'},
+{title : '',singer : '0540 安徒生童话106最后的珠子106',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0540 安徒生童话106最后的珠子106.mp3'},
+{title : '',singer : '0541 安徒生童话107两个姑娘107',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0541 安徒生童话107两个姑娘107.mp3'},
+{title : '',singer : '0542 安徒生童话108在辽远的海极108',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0542 安徒生童话108在辽远的海极108.mp3'},
+{title : '',singer : '0543 安徒生童话109钱猪109',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0543 安徒生童话109钱猪109.mp3'},
+{title : '',singer : '0544 安徒生童话110依卜和小克里斯丁110上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0544 安徒生童话110依卜和小克里斯丁110上.mp3'},
+{title : '',singer : '0545 安徒生童话111依卜和小克里斯丁111中',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0545 安徒生童话111依卜和小克里斯丁111中.mp3'},
+{title : '',singer : '0546 安徒生童话112依卜和小克里斯丁112下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0546 安徒生童话112依卜和小克里斯丁112下.mp3'},
+{title : '',singer : '0547 安徒生童话113笨蛋翰思113',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0547 安徒生童话113笨蛋翰思113.mp3'},
+{title : '',singer : '0548 安徒生童话114犹太女子114',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0548 安徒生童话114犹太女子114.mp3'},
+{title : '',singer : '0549 安徒生童话115瓶颈115上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0549 安徒生童话115瓶颈115上.mp3'},
+{title : '',singer : '0550 安徒生童话116瓶颈116中',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0550 安徒生童话116瓶颈116中.mp3'},
+{title : '',singer : '0551 安徒生童话117瓶颈117下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0551 安徒生童话117瓶颈117下.mp3'},
+{title : '',singer : '0552 安徒生童话118香肠栓熬的汤01',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0552 安徒生童话118香肠栓熬的汤01.mp3'},
+{title : '',singer : '0553 安徒生童话119香肠栓熬的汤02',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0553 安徒生童话119香肠栓熬的汤02.mp3'},
+{title : '',singer : '0554 安徒生童话120香肠栓熬的汤03',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0554 安徒生童话120香肠栓熬的汤03.mp3'},
+{title : '',singer : '0555 安徒生童话121单身汉的睡帽121',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0555 安徒生童话121单身汉的睡帽121.mp3'},
+{title : '',singer : '0556 安徒生童话122单身汉的睡帽122',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0556 安徒生童话122单身汉的睡帽122.mp3'},
+{title : '',singer : '0557 安徒生童话123单身汉的睡帽123',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0557 安徒生童话123单身汉的睡帽123.mp3'},
+{title : '',singer : '0558 安徒生童话124单身汉的睡帽124',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0558 安徒生童话124单身汉的睡帽124.mp3'},
+{title : '',singer : '0559 安徒生童话125一点成绩125上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0559 安徒生童话125一点成绩125上.mp3'},
+{title : '',singer : '0560 安徒生童话126一点成绩126下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0560 安徒生童话126一点成绩126下.mp3'},
+{title : '',singer : '0561 安徒生童话127识字课本127',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0561 安徒生童话127识字课本127.mp3'},
+{title : '',singer : '0562 安徒生童话128沼泽王的女儿128',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0562 安徒生童话128沼泽王的女儿128.mp3'},
+{title : '',singer : '0563 安徒生童话129沼泽王的女儿129',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0563 安徒生童话129沼泽王的女儿129.mp3'},
+{title : '',singer : '0564 安徒生童话130沼泽王的女儿130',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0564 安徒生童话130沼泽王的女儿130.mp3'},
+{title : '',singer : '0565 安徒生童话131沼泽王的女儿131',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0565 安徒生童话131沼泽王的女儿131.mp3'},
+{title : '',singer : '0566 安徒生童话132沼泽王的女儿132',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0566 安徒生童话132沼泽王的女儿132.mp3'},
+{title : '',singer : '0567 安徒生童话133沼泽王的女儿133',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0567 安徒生童话133沼泽王的女儿133.mp3'},
+{title : '',singer : '0568 安徒生童话134沼泽王的女儿134',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0568 安徒生童话134沼泽王的女儿134.mp3'},
+{title : '',singer : '0569 安徒生童话135沼泽王的女儿135',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0569 安徒生童话135沼泽王的女儿135.mp3'},
+{title : '',singer : '0570 安徒生童话136沼泽王的女儿136',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0570 安徒生童话136沼泽王的女儿136.mp3'},
+{title : '',singer : '0571 安徒生童话137老栎树的梦137上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0571 安徒生童话137老栎树的梦137上.mp3'},
+{title : '',singer : '0572 安徒生童话138老栎树的梦138下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0572 安徒生童话138老栎树的梦138下.mp3'},
+{title : '',singer : '0573 安徒生童话139赛跑者139',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0573 安徒生童话139赛跑者139.mp3'},
+{title : '',singer : '0574 安徒生童话140钟渊140',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0574 安徒生童话140钟渊140.mp3'},
+{title : '',singer : '0575 安徒生童话141恶毒的王子141',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0575 安徒生童话141恶毒的王子141.mp3'},
+{title : '',singer : '0576 安徒生童话142一个贵族和他的女儿们142',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0576 安徒生童话142一个贵族和他的女儿们142.mp3'},
+{title : '',singer : '0577 安徒生童话143一个贵族和他的女儿们143',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0577 安徒生童话143一个贵族和他的女儿们143.mp3'},
+{title : '',singer : '0578 安徒生童话144一个贵族和他的女儿们144',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0578 安徒生童话144一个贵族和他的女儿们144.mp3'},
+{title : '',singer : '0579 安徒生童话145踩着面包走路的女孩145上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0579 安徒生童话145踩着面包走路的女孩145上.mp3'},
+{title : '',singer : '0580 安徒生童话146踩着面包走路的女孩146下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0580 安徒生童话146踩着面包走路的女孩146下.mp3'},
+{title : '',singer : '0581 安徒生童话147守塔人奥列147',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0581 安徒生童话147守塔人奥列147.mp3'},
+{title : '',singer : '0582 安徒生童话148守塔人奥列148',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0582 安徒生童话148守塔人奥列148.mp3'},
+{title : '',singer : '0583 安徒生童话149安妮丽思贝149',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0583 安徒生童话149安妮丽思贝149.mp3'},
+{title : '',singer : '0584 安徒生童话150安妮丽思贝150',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0584 安徒生童话150安妮丽思贝150.mp3'},
+{title : '',singer : '0585 安徒生童话151安妮丽思贝151',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0585 安徒生童话151安妮丽思贝151.mp3'},
+{title : '',singer : '0586 安徒生童话152孩子们的闲话152',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0586 安徒生童话152孩子们的闲话152.mp3'},
+{title : '',singer : '0587 安徒生童话153一串珍珠153上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0587 安徒生童话153一串珍珠153上.mp3'},
+{title : '',singer : '0588 安徒生童话154一串珍珠154下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0588 安徒生童话154一串珍珠154下.mp3'},
+{title : '',singer : '0589 安徒生童话155笔和墨水壶155',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0589 安徒生童话155笔和墨水壶155.mp3'},
+{title : '',singer : '0590 安徒生童话156墓地里的孩子156',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0590 安徒生童话156墓地里的孩子156.mp3'},
+{title : '',singer : '0591 安徒生童话157两只公鸡157',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0591 安徒生童话157两只公鸡157.mp3'},
+{title : '',singer : '0592 安徒生童话158美158上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0592 安徒生童话158美158上.mp3'},
+{title : '',singer : '0593 安徒生童话159美159下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0593 安徒生童话159美159下.mp3'},
+{title : '',singer : '0594 安徒生童话160沙丘的故事160',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0594 安徒生童话160沙丘的故事160.mp3'},
+{title : '',singer : '0595 安徒生童话161沙丘的故事161',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0595 安徒生童话161沙丘的故事161.mp3'},
+{title : '',singer : '0596 安徒生童话162沙丘的故事162',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0596 安徒生童话162沙丘的故事162.mp3'},
+{title : '',singer : '0597 安徒生童话163沙丘的故事163',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0597 安徒生童话163沙丘的故事163.mp3'},
+{title : '',singer : '0598 安徒生童话164沙丘的故事164',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0598 安徒生童话164沙丘的故事164.mp3'},
+{title : '',singer : '0599 安徒生童话165沙丘的故事165',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0599 安徒生童话165沙丘的故事165.mp3'},
+{title : '',singer : '0600 安徒生童话166沙丘的故事166',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0600 安徒生童话166沙丘的故事166.mp3'},
+{title : '',singer : '0601 安徒生童话167沙丘的故事167',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0601 安徒生童话167沙丘的故事167.mp3'},
+{title : '',singer : '0602 安徒生童话168沙丘的故事168',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0602 安徒生童话168沙丘的故事168.mp3'},
+{title : '',singer : '0603 安徒生童话169演木偶戏的人169',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0603 安徒生童话169演木偶戏的人169.mp3'},
+{title : '',singer : '0604 安徒生童话170两兄弟170',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0604 安徒生童话170两兄弟170.mp3'},
+{title : '',singer : '0605 安徒生童话171古教堂的钟上171',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0605 安徒生童话171古教堂的钟上171.mp3'},
+{title : '',singer : '0606 安徒生童话172古教堂的钟下172',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0606 安徒生童话172古教堂的钟下172.mp3'},
+{title : '',singer : '0607 安徒生童话173乘邮车的12位旅客173',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0607 安徒生童话173乘邮车的12位旅客173.mp3'},
+{title : '',singer : '0608 安徒生童话174甲虫174上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0608 安徒生童话174甲虫174上.mp3'},
+{title : '',singer : '0609 安徒生童话175甲虫175下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0609 安徒生童话175甲虫175下.mp3'},
+{title : '',singer : '0610 安徒生童话176老头子做事总不会错176',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0610 安徒生童话176老头子做事总不会错176.mp3'},
+{title : '',singer : '0611 安徒生童话177雪人177上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0611 安徒生童话177雪人177上.mp3'},
+{title : '',singer : '0612 安徒生童话178雪人178下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0612 安徒生童话178雪人178下.mp3'},
+{title : '',singer : '0613 安徒生童话179在养鸭场里179上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0613 安徒生童话179在养鸭场里179上.mp3'},
+{title : '',singer : '0614 安徒生童话180在养鸭场里180下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0614 安徒生童话180在养鸭场里180下.mp3'},
+{title : '',singer : '0615 安徒生童话181新世纪的女神181上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0615 安徒生童话181新世纪的女神181上.mp3'},
+{title : '',singer : '0616 安徒生童话182新世纪的女神182下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0616 安徒生童话182新世纪的女神182下.mp3'},
+{title : '',singer : '0617 安徒生童话183冰姑娘183',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0617 安徒生童话183冰姑娘183.mp3'},
+{title : '',singer : '0618 安徒生童话184冰姑娘184',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0618 安徒生童话184冰姑娘184.mp3'},
+{title : '',singer : '0619 安徒生童话185冰姑娘185',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0619 安徒生童话185冰姑娘185.mp3'},
+{title : '',singer : '0620 安徒生童话186冰姑娘186',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0620 安徒生童话186冰姑娘186.mp3'},
+{title : '',singer : '0621 安徒生童话187冰姑娘187',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0621 安徒生童话187冰姑娘187.mp3'},
+{title : '',singer : '0622 安徒生童话188冰姑娘188',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0622 安徒生童话188冰姑娘188.mp3'},
+{title : '',singer : '0623 安徒生童话189冰姑娘189',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0623 安徒生童话189冰姑娘189.mp3'},
+{title : '',singer : '0624 安徒生童话190冰姑娘190',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0624 安徒生童话190冰姑娘190.mp3'},
+{title : '',singer : '0625 安徒生童话191冰姑娘191',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0625 安徒生童话191冰姑娘191.mp3'},
+{title : '',singer : '0626 安徒生童话192冰姑娘192',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0626 安徒生童话192冰姑娘192.mp3'},
+{title : '',singer : '0627 安徒生童话193冰姑娘193',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0627 安徒生童话193冰姑娘193.mp3'},
+{title : '',singer : '0628 安徒生童话194冰姑娘194',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0628 安徒生童话194冰姑娘194.mp3'},
+{title : '',singer : '0629 安徒生童话195冰姑娘195',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0629 安徒生童话195冰姑娘195.mp3'},
+{title : '',singer : '0630 安徒生童话196蝴蝶建达软植篇',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0630 安徒生童话196蝴蝶建达软植篇.mp3'},
+{title : '',singer : '0631 安徒生童话197素琪196',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0631 安徒生童话197素琪196.mp3'},
+{title : '',singer : '0632 安徒生童话198素琪197',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0632 安徒生童话198素琪197.mp3'},
+{title : '',singer : '0633 安徒生童话199安琪儿198',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0633 安徒生童话199安琪儿198.mp3'},
+{title : '',singer : '0634 安徒生童话200荞麦199',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0634 安徒生童话200荞麦199.mp3'}
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '0015 第一回美猴王横空出世',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0015 第一回美猴王横空出世.mp3'},
+{title : '',singer : '0016 第二回美猴王求仙寻道',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0016 第二回美猴王求仙寻道.mp3'},
+{title : '',singer : '0017 第三回拜入菩提老祖门下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0017 第三回拜入菩提老祖门下.mp3'},
+{title : '',singer : '0018 第四回显弄法术逐出师门',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0018 第四回显弄法术逐出师门.mp3'},
+{title : '',singer : '0019 第五回大战混世魔王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0019 第五回大战混世魔王.mp3'},
+{title : '',singer : '0020 第六回喜得金箍棒',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0020 第六回喜得金箍棒.mp3'},
+{title : '',singer : '0021 第七回悟空大闹冥王殿',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0021 第七回悟空大闹冥王殿.mp3'},
+{title : '',singer : '0022 第八回悟空惊动天庭',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0022 第八回悟空惊动天庭.mp3'},
+{title : '',singer : '0023 第九回天宫当个弼马温',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0023 第九回天宫当个弼马温.mp3'},
+{title : '',singer : '0024 第十回自封齐天大圣',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0024 第十回自封齐天大圣.mp3'},
+{title : '',singer : '0025 第十一回看守蟠桃园',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0025 第十一回看守蟠桃园.mp3'},
+{title : '',singer : '0026 第十二回搅乱蟠桃会',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0026 第十二回搅乱蟠桃会.mp3'},
+{title : '',singer : '0027 第十三回十万天兵捉大圣',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0027 第十三回十万天兵捉大圣.mp3'},
+{title : '',singer : '0028 第十四回二郎神捉拿悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0028 第十四回二郎神捉拿悟空.mp3'},
+{title : '',singer : '0029 第十五回二郎神变戏法',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0029 第十五回二郎神变戏法.mp3'},
+{title : '',singer : '0030 第十六回被困炼丹炉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0030 第十六回被困炼丹炉.mp3'},
+{title : '',singer : '0031 第十七回悟空被压五指山',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0031 第十七回悟空被压五指山.mp3'},
+{title : '',singer : '0032 第十八回观音奉旨赴长安',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0032 第十八回观音奉旨赴长安.mp3'},
+{title : '',singer : '0033 第十九回唐太宗地府还魂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0033 第十九回唐太宗地府还魂.mp3'},
+{title : '',singer : '0034 第二十回观音显像化金蝉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0034 第二十回观音显像化金蝉.mp3'},
+{title : '',singer : '0035 第二十一回五指山下救悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0035 第二十一回五指山下救悟空.mp3'},
+{title : '',singer : '0036 第二十二回取经去西天',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0036 第二十二回取经去西天.mp3'},
+{title : '',singer : '0037 第二十三回悟空擒贼被误会',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0037 第二十三回悟空擒贼被误会.mp3'},
+{title : '',singer : '0038 第二十四回紧箍咒降悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0038 第二十四回紧箍咒降悟空.mp3'},
+{title : '',singer : '0039 第二十五回鹰愁涧遇小白龙',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0039 第二十五回鹰愁涧遇小白龙.mp3'},
+{title : '',singer : '0040 第二十六回收服白龙马',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0040 第二十六回收服白龙马.mp3'},
+{title : '',singer : '0041 第二十七回观音院僧谋宝贝',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0041 第二十七回观音院僧谋宝贝.mp3'},
+{title : '',singer : '0042 第二十八回悟空天庭巧借避火照',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0042 第二十八回悟空天庭巧借避火照.mp3'},
+{title : '',singer : '0043 第二十九回黑风怪窃袈裟',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0043 第二十九回黑风怪窃袈裟.mp3'},
+{title : '',singer : '0044 第三十回悟空大闹黑风山',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0044 第三十回悟空大闹黑风山.mp3'},
+{title : '',singer : '0045 第三十一回观音收伏黑熊怪',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0045 第三十一回观音收伏黑熊怪.mp3'},
+{title : '',singer : '0046 第三十二回高老庄悟空降魔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0046 第三十二回高老庄悟空降魔.mp3'},
+{title : '',singer : '0047 第三十三回悟空戏耍猪刚鬣',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0047 第三十三回悟空戏耍猪刚鬣.mp3'},
+{title : '',singer : '0048 第三十四回八戒拜玄奘为师',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0048 第三十四回八戒拜玄奘为师.mp3'},
+{title : '',singer : '0049 第三十五回黄风岭唐僧有难',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0049 第三十五回黄风岭唐僧有难.mp3'},
+{title : '',singer : '0050 第三十六回悟空首战黄风怪',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0050 第三十六回悟空首战黄风怪.mp3'},
+{title : '',singer : '0051 第三十七回灵吉菩萨收风魔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0051 第三十七回灵吉菩萨收风魔.mp3'},
+{title : '',singer : '0052 第三十八回八戒大战流沙河',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0052 第三十八回八戒大战流沙河.mp3'},
+{title : '',singer : '0053 第三十九回流沙河妖怪难降',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0053 第三十九回流沙河妖怪难降.mp3'},
+{title : '',singer : '0054 第四十回木叉奉发收悟净',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0054 第四十回木叉奉发收悟净.mp3'},
+{title : '',singer : '0055 第四十一回四圣试禅心',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0055 第四十一回四圣试禅心.mp3'},
+{title : '',singer : '0056 第四十二回万寿山大仙留故人',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0056 第四十二回万寿山大仙留故人.mp3'},
+{title : '',singer : '0057 第四十三回悟空盗取人参果',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0057 第四十三回悟空盗取人参果.mp3'},
+{title : '',singer : '0058 第四十四回悟空大闹五庄观',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0058 第四十四回悟空大闹五庄观.mp3'},
+{title : '',singer : '0059 第四十五回镇元大仙捉取经僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0059 第四十五回镇元大仙捉取经僧.mp3'},
+{title : '',singer : '0060 第四十六回孙悟空三岛求方',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0060 第四十六回孙悟空三岛求方.mp3'},
+{title : '',singer : '0061 第四十七回观世音甘泉就树',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0061 第四十七回观世音甘泉就树.mp3'},
+{title : '',singer : '0062 第四十八回白骨夫人诡计多',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0062 第四十八回白骨夫人诡计多.mp3'},
+{title : '',singer : '0063 第四十九回白骨精二戏唐玄奘',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0063 第四十九回白骨精二戏唐玄奘.mp3'},
+{title : '',singer : '0064 第五十回唐僧驱逐孙悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0064 第五十回唐僧驱逐孙悟空.mp3'},
+{title : '',singer : '0065 第五十一回黑松林三藏逢魔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0065 第五十一回黑松林三藏逢魔.mp3'},
+{title : '',singer : '0066 第五十二回玄奘遇宝象国公主',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0066 第五十二回玄奘遇宝象国公主.mp3'},
+{title : '',singer : '0067 第五十三回玄奘脱难来国土',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0067 第五十三回玄奘脱难来国土.mp3'},
+{title : '',singer : '0068 第五十四回妖魔嫁祸玄奘',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0068 第五十四回妖魔嫁祸玄奘.mp3'},
+{title : '',singer : '0069 第五十五回小白龙救师傅',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0069 第五十五回小白龙救师傅.mp3'},
+{title : '',singer : '0070 第五十六回八戒激猴王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0070 第五十六回八戒激猴王.mp3'},
+{title : '',singer : '0071 第五十七回孙行者智降妖怪',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0071 第五十七回孙行者智降妖怪.mp3'},
+{title : '',singer : '0072 第五十八回金角大王和银角大王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0072 第五十八回金角大王和银角大王.mp3'},
+{title : '',singer : '0073 第五十九回孙悟空背银角大王反被戏',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0073 第五十九回孙悟空背银角大王反被戏.mp3'},
+{title : '',singer : '0074 第六十回孙悟空又被山压',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0074 第六十回孙悟空又被山压.mp3'},
+{title : '',singer : '0075 第六十一回孙悟空巧夺红葫芦玉净瓶',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0075 第六十一回孙悟空巧夺红葫芦玉净瓶.mp3'},
+{title : '',singer : '0076 第六十二回孙大圣的变身术失灵被捉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0076 第六十二回孙大圣的变身术失灵被捉.mp3'},
+{title : '',singer : '0077 第六十三回孙行者者行孙行者孙三戏众妖',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0077 第六十三回孙行者者行孙行者孙三戏众妖.mp3'},
+{title : '',singer : '0078 第六十四回悟空妙用紫金葫',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0078 第六十四回悟空妙用紫金葫.mp3'},
+{title : '',singer : '0079 第六十五回收妖成功继西行',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0079 第六十五回收妖成功继西行.mp3'},
+{title : '',singer : '0080 第六十六回夜宿宝林寺梦遇乌鸡国王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0080 第六十六回夜宿宝林寺梦遇乌鸡国王.mp3'},
+{title : '',singer : '0081 第六十七回老国王夜诉冤情孙大圣巧计引太子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0081 第六十七回老国王夜诉冤情孙大圣巧计引太子.mp3'},
+{title : '',singer : '0082 第六十八回太子举棋不定欲寻母亲辨真伪',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0082 第六十八回太子举棋不定欲寻母亲辨真伪.mp3'},
+{title : '',singer : '0083 第六十九回孙悟空设计救人',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0083 第六十九回孙悟空设计救人.mp3'},
+{title : '',singer : '0084 第六十九回师徒四人传信物助冤魂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0084 第六十九回师徒四人传信物助冤魂.mp3'},
+{title : '',singer : '0085 第七十回井下尸身现',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0085 第七十回井下尸身现.mp3'},
+{title : '',singer : '0086 第七十一回真国王吞丹还魂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0086 第七十一回真国王吞丹还魂.mp3'},
+{title : '',singer : '0087 第七十二回巧计揭发假国王沉冤竟是因果报',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0087 第七十二回巧计揭发假国王沉冤竟是因果报.mp3'},
+{title : '',singer : '0088 第七十三回红孩儿乔装打扮捉唐僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0088 第七十三回红孩儿乔装打扮捉唐僧.mp3'},
+{title : '',singer : '0089 第七十四回唐僧心软中计',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0089 第七十四回唐僧心软中计.mp3'},
+{title : '',singer : '0090 第七十五回红孩儿移花接木捉唐僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0090 第七十五回红孩儿移花接木捉唐僧.mp3'},
+{title : '',singer : '0091 第七十六回火云洞认亲',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0091 第七十六回火云洞认亲.mp3'},
+{title : '',singer : '0092 第七十七回悟空龙宫搬救兵',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0092 第七十七回悟空龙宫搬救兵.mp3'},
+{title : '',singer : '0093 第七十八回四海龙王皆出动大战红孩儿',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0093 第七十八回四海龙王皆出动大战红孩儿.mp3'},
+{title : '',singer : '0094 第七十九回八戒请菩萨再入圈套',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0094 第七十九回八戒请菩萨再入圈套.mp3'},
+{title : '',singer : '0095 第八十回悟空巧变牛魔王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0095 第八十回悟空巧变牛魔王.mp3'},
+{title : '',singer : '0096 第八十一回假魔王来赴宴',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0096 第八十一回假魔王来赴宴.mp3'},
+{title : '',singer : '0097 第八十二回南海请神通',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0097 第八十二回南海请神通.mp3'},
+{title : '',singer : '0098 第八十三回悟空观音合力擒妖魔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0098 第八十三回悟空观音合力擒妖魔.mp3'},
+{title : '',singer : '0099 第八十四回红孩儿变善财童子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0099 第八十四回红孩儿变善财童子.mp3'},
+{title : '',singer : '0100 第八十五回淘气三徒弟戏耍小道士',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0100 第八十五回淘气三徒弟戏耍小道士.mp3'},
+{title : '',singer : '0101 第八十六回车迟国常年干旱三法师求雨显神通',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0101 第八十六回车迟国常年干旱三法师求雨显神通.mp3'},
+{title : '',singer : '0102 第八十七回悟空搭救僧人',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0102 第八十七回悟空搭救僧人.mp3'},
+{title : '',singer : '0103 第八十八回夜探三清观',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0103 第八十八回夜探三清观.mp3'},
+{title : '',singer : '0104 第八十九回大仙施法遭破坏',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0104 第八十九回大仙施法遭破坏.mp3'},
+{title : '',singer : '0105 第九十回戏弄三法师',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0105 第九十回戏弄三法师.mp3'},
+{title : '',singer : '0106 第九十一回三法师告状唐僧师徒被押',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0106 第九十一回三法师告状唐僧师徒被押.mp3'},
+{title : '',singer : '0107 第九十二回第一轮比试悟空求雨有妙招',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0107 第九十二回第一轮比试悟空求雨有妙招.mp3'},
+{title : '',singer : '0108 第九十三回孙大圣祈雨显神威',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0108 第九十三回孙大圣祈雨显神威.mp3'},
+{title : '',singer : '0109 第九十四回第二轮比试云梯显圣',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0109 第九十四回第二轮比试云梯显圣.mp3'},
+{title : '',singer : '0110 第九十五回第三轮比试隔板猜枚',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0110 第九十五回第三轮比试隔板猜枚.mp3'},
+{title : '',singer : '0111 第九十六回虎力大仙比试惨输丢性命',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0111 第九十六回虎力大仙比试惨输丢性命.mp3'},
+{title : '',singer : '0112 第九十七回大仙丧命车迟国恢复安宁',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0112 第九十七回大仙丧命车迟国恢复安宁.mp3'},
+{title : '',singer : '0113 第九十八回大河挡路，暂宿人家遇怪事',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0113 第九十八回大河挡路，暂宿人家遇怪事.mp3'},
+{title : '',singer : '0114 第九十九回孙悟空妙计变童子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0114 第九十九回孙悟空妙计变童子.mp3'},
+{title : '',singer : '0115 第一百回保护童男童女悟空八戒齐上阵',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0115 第一百回保护童男童女悟空八戒齐上阵.mp3'},
+{title : '',singer : '0116 第一百零一回悟空、八戒戏耍灵感大王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0116 第一百零一回悟空、八戒戏耍灵感大王.mp3'},
+{title : '',singer : '0117 第一百零二回灵感大王设陷阱，通天河结冰捉唐僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0117 第一百零二回灵感大王设陷阱，通天河结冰捉唐僧.mp3'},
+{title : '',singer : '0118 第一百零三回通天河救师傅，悟空竟不识水性',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0118 第一百零三回通天河救师傅，悟空竟不识水性.mp3'},
+{title : '',singer : '0119 第一百零四回悟空紫竹林求见菩萨',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0119 第一百零四回悟空紫竹林求见菩萨.mp3'},
+{title : '',singer : '0120 第一百零五回灵感大王现真身，万年老龟渡唐僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0120 第一百零五回灵感大王现真身，万年老龟渡唐僧.mp3'},
+{title : '',singer : '0121 第一百零六回走出安全圈唐玄奘山中遇险',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0121 第一百零六回走出安全圈唐玄奘山中遇险.mp3'},
+{title : '',singer : '0122 第一百零七回宫殿变洞府，华服变枷锁',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0122 第一百零七回宫殿变洞府，华服变枷锁.mp3'},
+{title : '',singer : '0123 第一百零八回土地公巧妙点化，悟空机智救师傅',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0123 第一百零八回土地公巧妙点化，悟空机智救师傅.mp3'},
+{title : '',singer : '0124 第一百零九回金箍棒被收悟空上天搬救兵',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0124 第一百零九回金箍棒被收悟空上天搬救兵.mp3'},
+{title : '',singer : '0125 第一百一十回水火星君斩妖兵器皆被收',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0125 第一百一十回水火星君斩妖兵器皆被收.mp3'},
+{title : '',singer : '0126 第一百一十一回悟空巧取兵器',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0126 第一百一十一回悟空巧取兵器.mp3'},
+{title : '',singer : '0127 第一百一十二回老君收服坐骑',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0127 第一百一十二回老君收服坐骑.mp3'},
+{title : '',singer : '0128 第一百一十三回女儿国误饮河水师徒怀孕',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0128 第一百一十三回女儿国误饮河水师徒怀孕.mp3'},
+{title : '',singer : '0129 第一百一十四回破儿洞里寻泉水',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0129 第一百一十四回破儿洞里寻泉水.mp3'},
+{title : '',singer : '0130 第一百一十五回悟空大战如意真仙',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0130 第一百一十五回悟空大战如意真仙.mp3'},
+{title : '',singer : '0131 第一百一十六回西梁女国兑换官文',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0131 第一百一十六回西梁女国兑换官文.mp3'},
+{title : '',singer : '0132 第一百一十七回女儿国王动真心',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0132 第一百一十七回女儿国王动真心.mp3'},
+{title : '',singer : '0133 第一百一十八回唐僧告别女儿国',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0133 第一百一十八回唐僧告别女儿国.mp3'},
+{title : '',singer : '0134 第一百一十九回蝎子精首战悟空竟大胜',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0134 第一百一十九回蝎子精首战悟空竟大胜.mp3'},
+{title : '',singer : '0135 第一百二十回昴日星官降伏蝎子精',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0135 第一百二十回昴日星官降伏蝎子精.mp3'},
+{title : '',singer : '0136 第一百二十一回悟空诛草寇夜宿老人家',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0136 第一百二十一回悟空诛草寇夜宿老人家.mp3'},
+{title : '',singer : '0137 第一百二十二回老者儿子起歹念',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0137 第一百二十二回老者儿子起歹念.mp3'},
+{title : '',singer : '0138 第一百二十三回悟空杀人唐僧再逐悟空出师门',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0138 第一百二十三回悟空杀人唐僧再逐悟空出师门.mp3'},
+{title : '',singer : '0139 第一百二十四回紫竹林里诉衷肠',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0139 第一百二十四回紫竹林里诉衷肠.mp3'},
+{title : '',singer : '0140 第一百二十五回悟空出手伤师傅',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0140 第一百二十五回悟空出手伤师傅.mp3'},
+{title : '',singer : '0141 第一百二十六回沙僧求情请悟空花果山惊现四师徒',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0141 第一百二十六回沙僧求情请悟空花果山惊现四师徒.mp3'},
+{title : '',singer : '0142 第一百二十七回真假悟空相见',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0142 第一百二十七回真假悟空相见.mp3'},
+{title : '',singer : '0143 第一百二十八回菩萨、玉帝难辨真假',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0143 第一百二十八回菩萨、玉帝难辨真假.mp3'},
+{title : '',singer : '0144 第一百二十九回如来慧眼识悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0144 第一百二十九回如来慧眼识悟空.mp3'},
+{title : '',singer : '0145 第一百三十回火焰山遇阻',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0145 第一百三十回火焰山遇阻.mp3'},
+{title : '',singer : '0146 第一百三十一回悟空借宝扇',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0146 第一百三十一回悟空借宝扇.mp3'},
+{title : '',singer : '0147 第一百三十二回悟空借扇受阻72变有妙招',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0147 第一百三十二回悟空借扇受阻72变有妙招.mp3'},
+{title : '',singer : '0148 第一百三十三回假扇子灭火不成',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0148 第一百三十三回假扇子灭火不成.mp3'},
+{title : '',singer : '0149 第一百三十四回假扮牛魔王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0149 第一百三十四回假扮牛魔王.mp3'},
+{title : '',singer : '0150 第一百三十五回悟空不敌大猛牛众神围攻牛魔王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0150 第一百三十五回悟空不敌大猛牛众神围攻牛魔王.mp3'},
+{title : '',singer : '0151 第一百三十六回悟空一路打怪护唐僧',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0151 第一百三十六回悟空一路打怪护唐僧.mp3'},
+{title : '',singer : '0152 第一百三十七回误入小雷音寺',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0152 第一百三十七回误入小雷音寺.mp3'},
+{title : '',singer : '0153 第一百三十八回悟空乾坤袋中脱身',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0153 第一百三十八回悟空乾坤袋中脱身.mp3'},
+{title : '',singer : '0154 第一百三十九回众仙再被捉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0154 第一百三十九回众仙再被捉.mp3'},
+{title : '',singer : '0155 第一百四十回弥勒佛显神通',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0155 第一百四十回弥勒佛显神通.mp3'},
+{title : '',singer : '0156 第一百四十一回国王的心病',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0156 第一百四十一回国王的心病.mp3'},
+{title : '',singer : '0157 第一百四十二回神奇药方五金丹“包治百病”',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0157 第一百四十二回神奇药方五金丹“包治百病”.mp3'},
+{title : '',singer : '0158 第一百四十三回孙大圣巧取紫金铃',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0158 第一百四十三回孙大圣巧取紫金铃.mp3'},
+{title : '',singer : '0159 第一百四十四回菩萨现身收服妖邪',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0159 第一百四十四回菩萨现身收服妖邪.mp3'},
+{title : '',singer : '0160 第一百四十五回唐玄奘化缘误入盘丝洞',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0160 第一百四十五回唐玄奘化缘误入盘丝洞.mp3'},
+{title : '',singer : '0161 第一百四十六回仨徒弟大战蜘蛛精',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0161 第一百四十六回仨徒弟大战蜘蛛精.mp3'},
+{title : '',singer : '0162 第一百四十七回黄花观道长赐茶',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0162 第一百四十七回黄花观道长赐茶.mp3'},
+{title : '',singer : '0163 第一百四十八回多目怪为妹复仇被识破',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0163 第一百四十八回多目怪为妹复仇被识破.mp3'},
+{title : '',singer : '0164 第一百四十九回师徒四人来到小孩国',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0164 第一百四十九回师徒四人来到小孩国.mp3'},
+{title : '',singer : '0165 第一百五十回老寿星救白鹤',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0165 第一百五十回老寿星救白鹤.mp3'},
+{title : '',singer : '0166 第一百五十一回狮驼山三怪拦路',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0166 第一百五十一回狮驼山三怪拦路.mp3'},
+{title : '',singer : '0167 第一百五十二回阴阳二气瓶困悟空',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0167 第一百五十二回阴阳二气瓶困悟空.mp3'},
+{title : '',singer : '0168 第一百五十三回孙行者狮怪腹中搅乾坤',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0168 第一百五十三回孙行者狮怪腹中搅乾坤.mp3'},
+{title : '',singer : '0169 第一百五十四回象怪心有不服八戒被活捉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0169 第一百五十四回象怪心有不服八戒被活捉.mp3'},
+{title : '',singer : '0170 第一百五十五回三魔怪出尔反尔擒师徒',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0170 第一百五十五回三魔怪出尔反尔擒师徒.mp3'},
+{title : '',singer : '0171 第一百五十六回魔头分食唐僧肉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0171 第一百五十六回魔头分食唐僧肉.mp3'},
+{title : '',singer : '0172 第一百五十七回如来收魔头悟空释前嫌',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0172 第一百五十七回如来收魔头悟空释前嫌.mp3'},
+{title : '',singer : '0173 第一百五十八回天竺公主选夫婿',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0173 第一百五十八回天竺公主选夫婿.mp3'},
+{title : '',singer : '0174 第一百五十九回绣球滚落唐僧手',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0174 第一百五十九回绣球滚落唐僧手.mp3'},
+{title : '',singer : '0175 第一百六十回天竺公主竟是妖',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0175 第一百六十回天竺公主竟是妖.mp3'},
+{title : '',singer : '0176 第一百六十一回悟空大战玉兔精',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0176 第一百六十一回悟空大战玉兔精.mp3'},
+{title : '',singer : '0177 第一百六十二回师徒三人巧遇寇员外',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0177 第一百六十二回师徒三人巧遇寇员外.mp3'},
+{title : '',singer : '0178 第一百六十三回寇员外雨夜丧命',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0178 第一百六十三回寇员外雨夜丧命.mp3'},
+{title : '',singer : '0179 第一百六十四回唐僧被嫁祸悟空施法就师傅',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0179 第一百六十四回唐僧被嫁祸悟空施法就师傅.mp3'},
+{title : '',singer : '0180 第一百六十五回悟空地府还魂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0180 第一百六十五回悟空地府还魂.mp3'},
+{title : '',singer : '0181 第一百六十六回师徒抵达灵山',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0181 第一百六十六回师徒抵达灵山.mp3'},
+{title : '',singer : '0182 第一百六十七回功德圆满见如来',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0182 第一百六十七回功德圆满见如来.mp3'},
+{title : '',singer : '0183 第一百六十八回灵山取经返老鼋怒沉河',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0183 第一百六十八回灵山取经返老鼋怒沉河.mp3'},
+{title : '',singer : '0184 第一百六十九回历尽万难终得真经',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0184 第一百六十九回历尽万难终得真经.mp3'},
+{title : '',singer : '0185 第一百七十回师徒四人满到归根(完)',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0185 第一百七十回师徒四人满到归根(完).mp3'}
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

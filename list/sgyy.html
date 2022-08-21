@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '0231 三国演义001三结义上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0231 三国演义001三结义上.mp3'},
+{title : '',singer : '0232 三国演义002桃园三结义下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0232 三国演义002桃园三结义下.mp3'},
+{title : '',singer : '0233 三国演义003捉放曹上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0233 三国演义003捉放曹上.mp3'},
+{title : '',singer : '0234 三国演义004捉放曹下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0234 三国演义004捉放曹下.mp3'},
+{title : '',singer : '0235 三国演义005温酒斩华雄上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0235 三国演义005温酒斩华雄上.mp3'},
+{title : '',singer : '0236 三国演义006温酒斩华雄下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0236 三国演义006温酒斩华雄下.mp3'},
+{title : '',singer : '0237 三国演义007三英战吕布上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0237 三国演义007三英战吕布上.mp3'},
+{title : '',singer : '0238 三国演义008三英战吕布下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0238 三国演义008三英战吕布下.mp3'},
+{title : '',singer : '0239 三国演义009美人计',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0239 三国演义009美人计.mp3'},
+{title : '',singer : '0240 三国演义010煮酒论英雄',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0240 三国演义010煮酒论英雄.mp3'},
+{title : '',singer : '0241 三国演义011关公约三事上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0241 三国演义011关公约三事上.mp3'},
+{title : '',singer : '0242 三国演义012关公约三事下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0242 三国演义012关公约三事下.mp3'},
+{title : '',singer : '0243 三国演义013斩颜良诛文丑上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0243 三国演义013斩颜良诛文丑上.mp3'},
+{title : '',singer : '0244 三国演义014斩颜良诛文丑下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0244 三国演义014斩颜良诛文丑下.mp3'},
+{title : '',singer : '0245 三国演义015千里走单骑1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0245 三国演义015千里走单骑1.mp3'},
+{title : '',singer : '0246 三国演义016千里走单骑2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0246 三国演义016千里走单骑2.mp3'},
+{title : '',singer : '0247 三国演义017千里走单骑3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0247 三国演义017千里走单骑3.mp3'},
+{title : '',singer : '0248 三国演义018千里走单骑4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0248 三国演义018千里走单骑4.mp3'},
+{title : '',singer : '0249 三国演义019千里走单骑5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0249 三国演义019千里走单骑5.mp3'},
+{title : '',singer : '0250 三国演义020千里走单骑6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0250 三国演义020千里走单骑6.mp3'},
+{title : '',singer : '0251 三国演义021有人要偷关羽的马',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0251 三国演义021有人要偷关羽的马.mp3'},
+{title : '',singer : '0252 三国演义022关羽收周仓',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0252 三国演义022关羽收周仓.mp3'},
+{title : '',singer : '0253 三国演义023兄弟相逢',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0253 三国演义023兄弟相逢.mp3'},
+{title : '',singer : '0254 三国演义024古城汇',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0254 三国演义024古城汇.mp3'},
+{title : '',singer : '0255 三国演义025关渡之战1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0255 三国演义025关渡之战1.mp3'},
+{title : '',singer : '0256 三国演义026关渡之战2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0256 三国演义026关渡之战2.mp3'},
+{title : '',singer : '0257 三国演义027关渡之战3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0257 三国演义027关渡之战3.mp3'},
+{title : '',singer : '0258 三国演义028关渡之战4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0258 三国演义028关渡之战4.mp3'},
+{title : '',singer : '0259 三国演义029三顾茅庐1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0259 三国演义029三顾茅庐1.mp3'},
+{title : '',singer : '0260 三国演义030三顾茅庐2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0260 三国演义030三顾茅庐2.mp3'},
+{title : '',singer : '0261 三国演义031三顾茅庐3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0261 三国演义031三顾茅庐3.mp3'},
+{title : '',singer : '0262 三国演义032三顾茅庐4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0262 三国演义032三顾茅庐4.mp3'},
+{title : '',singer : '0263 三国演义033长板坡1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0263 三国演义033长板坡1.mp3'},
+{title : '',singer : '0264 三国演义034长板坡2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0264 三国演义034长板坡2.mp3'},
+{title : '',singer : '0265 三国演义035长板坡3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0265 三国演义035长板坡3.mp3'},
+{title : '',singer : '0266 三国演义036长板坡4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0266 三国演义036长板坡4.mp3'},
+{title : '',singer : '0267 三国演义037舌战群儒1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0267 三国演义037舌战群儒1.mp3'},
+{title : '',singer : '0268 三国演义038舌战群儒2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0268 三国演义038舌战群儒2.mp3'},
+{title : '',singer : '0269 三国演义039舌战群儒3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0269 三国演义039舌战群儒3.mp3'},
+{title : '',singer : '0270 三国演义040舌战群儒4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0270 三国演义040舌战群儒4.mp3'},
+{title : '',singer : '0271 三国演义041群英会1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0271 三国演义041群英会1.mp3'},
+{title : '',singer : '0272 三国演义042群英会2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0272 三国演义042群英会2.mp3'},
+{title : '',singer : '0273 三国演义043群英会3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0273 三国演义043群英会3.mp3'},
+{title : '',singer : '0274 三国演义044群英会4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0274 三国演义044群英会4.mp3'},
+{title : '',singer : '0275 三国演义045三国演义草船借箭1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0275 三国演义045三国演义草船借箭1.mp3'},
+{title : '',singer : '0276 三国演义046三国演义草船借箭2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0276 三国演义046三国演义草船借箭2.mp3'},
+{title : '',singer : '0277 三国演义047三国演义草船借箭3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0277 三国演义047三国演义草船借箭3.mp3'},
+{title : '',singer : '0278 三国演义048三国演义草船借箭4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0278 三国演义048三国演义草船借箭4.mp3'},
+{title : '',singer : '0279 三国演义049赤壁之战1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0279 三国演义049赤壁之战1.mp3'},
+{title : '',singer : '0280 三国演义050赤壁之战2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0280 三国演义050赤壁之战2.mp3'},
+{title : '',singer : '0281 三国演义051赤壁之战3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0281 三国演义051赤壁之战3.mp3'},
+{title : '',singer : '0282 三国演义052赤壁之战4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0282 三国演义052赤壁之战4.mp3'},
+{title : '',singer : '0283 三国演义053赤壁之战5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0283 三国演义053赤壁之战5.mp3'},
+{title : '',singer : '0284 三国演义054赤壁之战6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0284 三国演义054赤壁之战6.mp3'},
+{title : '',singer : '0285 三国演义055赤壁之战7',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0285 三国演义055赤壁之战7.mp3'},
+{title : '',singer : '0286 三国演义056赤壁之战8',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0286 三国演义056赤壁之战8.mp3'},
+{title : '',singer : '0287 三国演义057华容道1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0287 三国演义057华容道1.mp3'},
+{title : '',singer : '0288 三国演义058华容道2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0288 三国演义058华容道2.mp3'},
+{title : '',singer : '0289 三国演义059华容道3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0289 三国演义059华容道3.mp3'},
+{title : '',singer : '0290 三国演义060华容道4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0290 三国演义060华容道4.mp3'},
+{title : '',singer : '0291 三国演义061智取南郡1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0291 三国演义061智取南郡1.mp3'},
+{title : '',singer : '0292 三国演义062智取南郡2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0292 三国演义062智取南郡2.mp3'},
+{title : '',singer : '0293 三国演义063智取南郡3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0293 三国演义063智取南郡3.mp3'},
+{title : '',singer : '0294 三国演义064智取南郡4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0294 三国演义064智取南郡4.mp3'},
+{title : '',singer : '0295 三国演义065三气周瑜1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0295 三国演义065三气周瑜1.mp3'},
+{title : '',singer : '0296 三国演义066三气周瑜2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0296 三国演义066三气周瑜2.mp3'},
+{title : '',singer : '0297 三国演义067三气周瑜3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0297 三国演义067三气周瑜3.mp3'},
+{title : '',singer : '0298 三国演义068三气周瑜4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0298 三国演义068三气周瑜4.mp3'},
+{title : '',singer : '0299 三国演义069三气周瑜5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0299 三国演义069三气周瑜5.mp3'},
+{title : '',singer : '0300 三国演义070三气周瑜6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0300 三国演义070三气周瑜6.mp3'},
+{title : '',singer : '0301 三国演义071三气周瑜7',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0301 三国演义071三气周瑜7.mp3'},
+{title : '',singer : '0302 三国演义072三气周瑜8',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0302 三国演义072三气周瑜8.mp3'},
+{title : '',singer : '0303 三国演义073三气周瑜9',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0303 三国演义073三气周瑜9.mp3'},
+{title : '',singer : '0304 三国演义074三气周瑜10',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0304 三国演义074三气周瑜10.mp3'},
+{title : '',singer : '0305 三国演义075庞统当县令上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0305 三国演义075庞统当县令上.mp3'},
+{title : '',singer : '0306 三国演义076庞统当县令下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0306 三国演义076庞统当县令下.mp3'},
+{title : '',singer : '0307 三国演义077单刀会上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0307 三国演义077单刀会上.mp3'},
+{title : '',singer : '0308 三国演义078单刀会下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0308 三国演义078单刀会下.mp3'},
+{title : '',singer : '0309 三国演义079水淹七军1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0309 三国演义079水淹七军1.mp3'},
+{title : '',singer : '0310 三国演义080水淹七军2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0310 三国演义080水淹七军2.mp3'},
+{title : '',singer : '0311 三国演义081水淹七军3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0311 三国演义081水淹七军3.mp3'},
+{title : '',singer : '0312 三国演义082水淹七军4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0312 三国演义082水淹七军4.mp3'},
+{title : '',singer : '0313 三国演义083水淹七军5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0313 三国演义083水淹七军5.mp3'},
+{title : '',singer : '0314 三国演义084水淹七军6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0314 三国演义084水淹七军6.mp3'},
+{title : '',singer : '0315 三国演义085水淹七军7',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0315 三国演义085水淹七军7.mp3'},
+{title : '',singer : '0316 三国演义086水淹七军8',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0316 三国演义086水淹七军8.mp3'},
+{title : '',singer : '0317 三国演义087水淹七军9',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0317 三国演义087水淹七军9.mp3'},
+{title : '',singer : '0318 三国演义088水淹七军10',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0318 三国演义088水淹七军10.mp3'},
+{title : '',singer : '0319 三国演义089三英归位1走麦城上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0319 三国演义089三英归位1走麦城上.mp3'},
+{title : '',singer : '0320 三国演义090三英归位2走麦城下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0320 三国演义090三英归位2走麦城下.mp3'},
+{title : '',singer : '0321 三国演义091三英归位3张飞之死上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0321 三国演义091三英归位3张飞之死上.mp3'},
+{title : '',singer : '0322 三国演义092三英归位4张飞之死下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0322 三国演义092三英归位4张飞之死下.mp3'},
+{title : '',singer : '0323 三国演义093三英归位5刘备之死1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0323 三国演义093三英归位5刘备之死1.mp3'},
+{title : '',singer : '0324 三国演义094三英归位6刘备之死2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0324 三国演义094三英归位6刘备之死2.mp3'},
+{title : '',singer : '0325 三国演义095三英归位7刘备之死3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0325 三国演义095三英归位7刘备之死3.mp3'},
+{title : '',singer : '0326 三国演义096三英归位8刘备之死4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0326 三国演义096三英归位8刘备之死4.mp3'},
+{title : '',singer : '0327 三国演义097三英归位9刘备之死5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0327 三国演义097三英归位9刘备之死5.mp3'},
+{title : '',singer : '0328 三国演义098三英归位10刘备之死6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0328 三国演义098三英归位10刘备之死6.mp3'},
+{title : '',singer : '0329 三国演义099孔明南征1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0329 三国演义099孔明南征1.mp3'},
+{title : '',singer : '0330 三国演义100孔明南征2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0330 三国演义100孔明南征2.mp3'},
+{title : '',singer : '0331 三国演义101孔明南征3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0331 三国演义101孔明南征3.mp3'},
+{title : '',singer : '0332 三国演义102孔明南征4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0332 三国演义102孔明南征4.mp3'},
+{title : '',singer : '0333 三国演义103孔明南征5',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0333 三国演义103孔明南征5.mp3'},
+{title : '',singer : '0334 三国演义104孔明南征6',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0334 三国演义104孔明南征6.mp3'},
+{title : '',singer : '0335 三国演义105孔明南征7',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0335 三国演义105孔明南征7.mp3'},
+{title : '',singer : '0336 三国演义106孔明南征8',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0336 三国演义106孔明南征8.mp3'},
+{title : '',singer : '0337 三国演义107孔明南征9',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0337 三国演义107孔明南征9.mp3'},
+{title : '',singer : '0338 三国演义108孔明南征10',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0338 三国演义108孔明南征10.mp3'},
+{title : '',singer : '0339 三国演义109孔明南征11',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0339 三国演义109孔明南征11.mp3'},
+{title : '',singer : '0340 三国演义110三国归晋',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/地方戏曲/0340 三国演义110三国归晋.mp3'}
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

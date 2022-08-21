@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1106 罗布奥特曼第01集罗布奥特曼登场1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1106 罗布奥特曼第01集罗布奥特曼登场1.mp3'},
+{title : '',singer : '1107 罗布奥特曼第01集罗布奥特曼登场2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1107 罗布奥特曼第01集罗布奥特曼登场2.mp3'},
+{title : '',singer : '1108 罗布奥特曼第01集罗布奥特曼登场3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1108 罗布奥特曼第01集罗布奥特曼登场3.mp3'},
+{title : '',singer : '1109 罗布奥特曼第02集兄弟情1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1109 罗布奥特曼第02集兄弟情1.mp3'},
+{title : '',singer : '1110 罗布奥特曼第02集兄弟情2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1110 罗布奥特曼第02集兄弟情2.mp3'},
+{title : '',singer : '1111 罗布奥特曼第02集兄弟情3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1111 罗布奥特曼第02集兄弟情3.mp3'},
+{title : '',singer : '1112 罗布奥特曼第03集欢迎来到爱染科技1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1112 罗布奥特曼第03集欢迎来到爱染科技1.mp3'},
+{title : '',singer : '1113 罗布奥特曼第03集欢迎来到爱染科技2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1113 罗布奥特曼第03集欢迎来到爱染科技2.mp3'},
+{title : '',singer : '1114 罗布奥特曼第03集欢迎来到爱染科技3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1114 罗布奥特曼第03集欢迎来到爱染科技3.mp3'},
+{title : '',singer : '1115 罗布奥特曼第04集光之决胜球1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1115 罗布奥特曼第04集光之决胜球1.mp3'},
+{title : '',singer : '1116 罗布奥特曼第04集光之决胜球2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1116 罗布奥特曼第04集光之决胜球2.mp3'},
+{title : '',singer : '1117 罗布奥特曼第04集光之决胜球3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1117 罗布奥特曼第04集光之决胜球3.mp3'},
+{title : '',singer : '1118 罗布奥特曼第05集再见了伊卡洛斯1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1118 罗布奥特曼第05集再见了伊卡洛斯1.mp3'},
+{title : '',singer : '1119 罗布奥特曼第05集再见了伊卡洛斯2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1119 罗布奥特曼第05集再见了伊卡洛斯2.mp3'},
+{title : '',singer : '1120 罗布奥特曼第05集再见了伊卡洛斯3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1120 罗布奥特曼第05集再见了伊卡洛斯3.mp3'},
+{title : '',singer : '1121 罗布奥特曼第06集宿敌！大姐头的必杀拳1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1121 罗布奥特曼第06集宿敌！大姐头的必杀拳1.mp3'},
+{title : '',singer : '1122 罗布奥特曼第06集宿敌！大姐头的必杀拳2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1122 罗布奥特曼第06集宿敌！大姐头的必杀拳2.mp3'},
+{title : '',singer : '1123 罗布奥特曼第06集宿敌！大姐头的必杀拳3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1123 罗布奥特曼第06集宿敌！大姐头的必杀拳3.mp3'},
+{title : '',singer : '1124 罗布奥特曼第07集丧失英雄资格1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1124 罗布奥特曼第07集丧失英雄资格1.mp3'},
+{title : '',singer : '1125 罗布奥特曼第07集丧失英雄资格2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1125 罗布奥特曼第07集丧失英雄资格2.mp3'},
+{title : '',singer : '1126 罗布奥特曼第07集丧失英雄资格3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1126 罗布奥特曼第07集丧失英雄资格3.mp3'},
+{title : '',singer : '1127 罗布奥特曼第08集全世界都在等着我1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1127 罗布奥特曼第08集全世界都在等着我1.mp3'},
+{title : '',singer : '1128 罗布奥特曼第08集全世界都在等着我2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1128 罗布奥特曼第08集全世界都在等着我2.mp3'},
+{title : '',singer : '1129 罗布奥特曼第08集全世界都在等着我3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1129 罗布奥特曼第08集全世界都在等着我3.mp3'},
+{title : '',singer : '1130 罗布奥特曼第09集以奥特战士之名1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1130 罗布奥特曼第09集以奥特战士之名1.mp3'},
+{title : '',singer : '1131 罗布奥特曼第09集以奥特战士之名2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1131 罗布奥特曼第09集以奥特战士之名2.mp3'},
+{title : '',singer : '1132 罗布奥特曼第09集以奥特战士之名3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1132 罗布奥特曼第09集以奥特战士之名3.mp3'},
+{title : '',singer : '1133 罗布奥特曼第10集凑家的假日1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1133 罗布奥特曼第10集凑家的假日1.mp3'},
+{title : '',singer : '1134 罗布奥特曼第10集凑家的假日2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1134 罗布奥特曼第10集凑家的假日2.mp3'},
+{title : '',singer : '1135 罗布奥特曼第10集凑家的假日3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1135 罗布奥特曼第10集凑家的假日3.mp3'},
+{title : '',singer : '1136 罗布奥特曼第11集爱染狂躁曲1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1136 罗布奥特曼第11集爱染狂躁曲1.mp3'},
+{title : '',singer : '1137 罗布奥特曼第11集爱染狂躁曲2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1137 罗布奥特曼第11集爱染狂躁曲2.mp3'},
+{title : '',singer : '1138 罗布奥特曼第11集爱染狂躁曲3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1138 罗布奥特曼第11集爱染狂躁曲3.mp3'},
+{title : '',singer : '1139 罗布奥特曼第12集我们要守护的东西1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1139 罗布奥特曼第12集我们要守护的东西1.mp3'},
+{title : '',singer : '1140 罗布奥特曼第12集我们要守护的东西2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1140 罗布奥特曼第12集我们要守护的东西2.mp3'},
+{title : '',singer : '1141 罗布奥特曼第12集我们要守护的东西3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1141 罗布奥特曼第12集我们要守护的东西3.mp3'},
+{title : '',singer : '1142 罗布奥特曼第13集兄妹之间无秘密1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1142 罗布奥特曼第13集兄妹之间无秘密1.mp3'},
+{title : '',singer : '1143 罗布奥特曼第13集兄妹之间无秘密2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1143 罗布奥特曼第13集兄妹之间无秘密2.mp3'},
+{title : '',singer : '1144 罗布奥特曼第13集兄妹之间无秘密3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1144 罗布奥特曼第13集兄妹之间无秘密3.mp3'},
+{title : '',singer : '1145 罗布奥特曼第14集你究竟是谁1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1145 罗布奥特曼第14集你究竟是谁1.mp3'},
+{title : '',singer : '1146 罗布奥特曼第14集你究竟是谁2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1146 罗布奥特曼第14集你究竟是谁2.mp3'},
+{title : '',singer : '1147 罗布奥特曼第14集你究竟是谁3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1147 罗布奥特曼第14集你究竟是谁3.mp3'},
+{title : '',singer : '1148 罗布奥特曼第15集极致绊身1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1148 罗布奥特曼第15集极致绊身1.mp3'},
+{title : '',singer : '1149 罗布奥特曼第15集极致绊身2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1149 罗布奥特曼第15集极致绊身2.mp3'},
+{title : '',singer : '1150 罗布奥特曼第15集极致绊身3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1150 罗布奥特曼第15集极致绊身3.mp3'},
+{title : '',singer : '1151 罗布奥特曼第16集这一瞬间是亲情1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1151 罗布奥特曼第16集这一瞬间是亲情1.mp3'},
+{title : '',singer : '1152 罗布奥特曼第16集这一瞬间是亲情2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1152 罗布奥特曼第16集这一瞬间是亲情2.mp3'},
+{title : '',singer : '1153 罗布奥特曼第16集这一瞬间是亲情3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1153 罗布奥特曼第16集这一瞬间是亲情3.mp3'},
+{title : '',singer : '1154 罗布奥特曼第17集大家都是朋友1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1154 罗布奥特曼第17集大家都是朋友1.mp3'},
+{title : '',singer : '1155 罗布奥特曼第17集大家都是朋友2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1155 罗布奥特曼第17集大家都是朋友2.mp3'},
+{title : '',singer : '1156 罗布奥特曼第17集大家都是朋友3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1156 罗布奥特曼第17集大家都是朋友3.mp3'},
+{title : '',singer : '1157 罗布奥特曼第18集没有明天的世界1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1157 罗布奥特曼第18集没有明天的世界1.mp3'},
+{title : '',singer : '1158 罗布奥特曼第18集没有明天的世界2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1158 罗布奥特曼第18集没有明天的世界2.mp3'},
+{title : '',singer : '1159 罗布奥特曼第18集没有明天的世界3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1159 罗布奥特曼第18集没有明天的世界3.mp3'},
+{title : '',singer : '1160 罗布奥特曼第19集善人与恶人1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1160 罗布奥特曼第19集善人与恶人1.mp3'},
+{title : '',singer : '1161 罗布奥特曼第19集善人与恶人2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1161 罗布奥特曼第19集善人与恶人2.mp3'},
+{title : '',singer : '1162 罗布奥特曼第19集善人与恶人3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1162 罗布奥特曼第19集善人与恶人3.mp3'},
+{title : '',singer : '1163 罗布奥特曼第20集群星的记忆1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1163 罗布奥特曼第20集群星的记忆1.mp3'},
+{title : '',singer : '1164 罗布奥特曼第20集群星的记忆2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1164 罗布奥特曼第20集群星的记忆2.mp3'},
+{title : '',singer : '1165 罗布奥特曼第20集群星的记忆3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1165 罗布奥特曼第20集群星的记忆3.mp3'},
+{title : '',singer : '1166 罗布奥特曼第21集糖果和包子1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1166 罗布奥特曼第21集糖果和包子1.mp3'},
+{title : '',singer : '1167 罗布奥特曼第21集糖果和包子2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1167 罗布奥特曼第21集糖果和包子2.mp3'},
+{title : '',singer : '1168 罗布奥特曼第21集糖果和包子3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1168 罗布奥特曼第21集糖果和包子3.mp3'},
+{title : '',singer : '1169 罗布奥特曼第22集异次元妈妈1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1169 罗布奥特曼第22集异次元妈妈1.mp3'},
+{title : '',singer : '1170 罗布奥特曼第22集异次元妈妈2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1170 罗布奥特曼第22集异次元妈妈2.mp3'},
+{title : '',singer : '1171 罗布奥特曼第22集异次元妈妈3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1171 罗布奥特曼第22集异次元妈妈3.mp3'},
+{title : '',singer : '1172 罗布奥特曼第23集破灭的水晶1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1172 罗布奥特曼第23集破灭的水晶1.mp3'},
+{title : '',singer : '1173 罗布奥特曼第23集破灭的水晶2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1173 罗布奥特曼第23集破灭的水晶2.mp3'},
+{title : '',singer : '1174 罗布奥特曼第23集破灭的水晶3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1174 罗布奥特曼第23集破灭的水晶3.mp3'},
+{title : '',singer : '1175 罗布奥特曼第24集我很快乐1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1175 罗布奥特曼第24集我很快乐1.mp3'},
+{title : '',singer : '1176 罗布奥特曼第24集我很快乐2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1176 罗布奥特曼第24集我很快乐2.mp3'},
+{title : '',singer : '1177 罗布奥特曼第24集我很快乐3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1177 罗布奥特曼第24集我很快乐3.mp3'},
+{title : '',singer : '1178 罗布奥特曼第25集朝阳之家1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1178 罗布奥特曼第25集朝阳之家1.mp3'},
+{title : '',singer : '1179 罗布奥特曼第25集朝阳之家2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1179 罗布奥特曼第25集朝阳之家2.mp3'},
+{title : '',singer : '1180 罗布奥特曼第25集朝阳之家3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1180 罗布奥特曼第25集朝阳之家3.mp3'}
+
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

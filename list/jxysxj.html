@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1366 姜小牙上学记02.给我一个好朋友01我叫姜小牙',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1366 姜小牙上学记02.给我一个好朋友01我叫姜小牙.mp3'},
+{title : '',singer : '1367 姜小牙上学记03.给我一个好朋友02找呀找呀找朋友',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1367 姜小牙上学记03.给我一个好朋友02找呀找呀找朋友.mp3'},
+{title : '',singer : '1368 姜小牙上学记04.给我一个好朋友03爱哭的同桌',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1368 姜小牙上学记04.给我一个好朋友03爱哭的同桌.mp3'},
+{title : '',singer : '1369 姜小牙上学记05给我一个好朋友04换同桌',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1369 姜小牙上学记05给我一个好朋友04换同桌.mp3'},
+{title : '',singer : '1370 姜小牙上学记06给我一个好朋友05最喜欢的老师',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1370 姜小牙上学记06给我一个好朋友05最喜欢的老师.mp3'},
+{title : '',singer : '1371 姜小牙上学记07给我一个好朋友06我也想当班长',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1371 姜小牙上学记07给我一个好朋友06我也想当班长.mp3'},
+{title : '',singer : '1372 姜小牙上学记08给我一个好朋友07好可怕的班长',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1372 姜小牙上学记08给我一个好朋友07好可怕的班长.mp3'},
+{title : '',singer : '1373 姜小牙上学记09给我一个好朋友08气人的体育课',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1373 姜小牙上学记09给我一个好朋友08气人的体育课.mp3'},
+{title : '',singer : '1374 姜小牙上学记10给我一个好朋友09我的坏消息',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1374 姜小牙上学记10给我一个好朋友09我的坏消息.mp3'},
+{title : '',singer : '1375 姜小牙上学记11给我一个好朋友10讨厌的米小圈',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1375 姜小牙上学记11给我一个好朋友10讨厌的米小圈.mp3'},
+{title : '',singer : '1376 姜小牙上学记12给我一个好朋友11你争我夺',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1376 姜小牙上学记12给我一个好朋友11你争我夺.mp3'},
+{title : '',singer : '1377 姜小牙上学记13给我一个好朋友12鹅鹅鹅',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1377 姜小牙上学记13给我一个好朋友12鹅鹅鹅.mp3'},
+{title : '',singer : '1378 姜小牙上学记14给我一个好朋友13我们还是好朋友',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1378 姜小牙上学记14给我一个好朋友13我们还是好朋友.mp3'},
+{title : '',singer : '1379 姜小牙上学记15给我一个好朋友14针锋相对',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1379 姜小牙上学记15给我一个好朋友14针锋相对.mp3'},
+{title : '',singer : '1380 姜小牙上学记16给我一个好朋友15我是诗人',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1380 姜小牙上学记16给我一个好朋友15我是诗人.mp3'},
+{title : '',singer : '1381 姜小牙上学记17我的变形记01我要钱',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1381 姜小牙上学记17我的变形记01我要钱.mp3'},
+{title : '',singer : '1382 姜小牙上学记18我的变形记02爸爸破产了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1382 姜小牙上学记18我的变形记02爸爸破产了.mp3'},
+{title : '',singer : '1383 姜小牙上学记19我的变形记03我是穷光蛋',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1383 姜小牙上学记19我的变形记03我是穷光蛋.mp3'},
+{title : '',singer : '1384 姜小牙上学记20我的变形记04爸爸是个演员',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1384 姜小牙上学记20我的变形记04爸爸是个演员.mp3'},
+{title : '',singer : '1385 姜小牙上学记21我的变形记05我是大富翁',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1385 姜小牙上学记21我的变形记05我是大富翁.mp3'},
+{title : '',singer : '1386 姜小牙上学记22我的变形记06花钱大王',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1386 姜小牙上学记22我的变形记06花钱大王.mp3'},
+{title : '',singer : '1387 姜小牙上学记23我的变形记07再见啦！同学们',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1387 姜小牙上学记23我的变形记07再见啦！同学们.mp3'},
+{title : '',singer : '1388 姜小牙上学记24我的变形记08初到山区小学',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1388 姜小牙上学记24我的变形记08初到山区小学.mp3'},
+{title : '',singer : '1389 姜小牙上学记25我的变形记09山区第一天',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1389 姜小牙上学记25我的变形记09山区第一天.mp3'},
+{title : '',singer : '1390 姜小牙上学记26我的变形记10生气的第二天',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1390 姜小牙上学记26我的变形记10生气的第二天.mp3'},
+{title : '',singer : '1391 姜小牙上学记27我的变形记11孙二娃不见了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1391 姜小牙上学记27我的变形记11孙二娃不见了.mp3'},
+{title : '',singer : '1392 姜小牙上学记28我的变形记12我们是好朋友',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1392 姜小牙上学记28我的变形记12我们是好朋友.mp3'},
+{title : '',singer : '1393 姜小牙上学记29我的变形记13时间过得真快',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1393 姜小牙上学记29我的变形记13时间过得真快.mp3'},
+{title : '',singer : '1394 姜小牙上学记30我的变形记14依依不舍',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1394 姜小牙上学记30我的变形记14依依不舍.mp3'},
+{title : '',singer : '1395 姜小牙上学记31我的变形记15全新的姜小牙',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1395 姜小牙上学记31我的变形记15全新的姜小牙.mp3'},
+{title : '',singer : '1396 姜小牙上学记32我的变形记16好毛病和坏毛病',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1396 姜小牙上学记32我的变形记16好毛病和坏毛病.mp3'},
+{title : '',singer : '1397 姜小牙上学记33好朋友争夺战01好玩的新同学',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1397 姜小牙上学记33好朋友争夺战01好玩的新同学.mp3'},
+{title : '',singer : '1398 姜小牙上学记34好朋友争夺战02一起玩滑板',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1398 姜小牙上学记34好朋友争夺战02一起玩滑板.mp3'},
+{title : '',singer : '1399 姜小牙上学记35好朋友争夺战03不理米小圈',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1399 姜小牙上学记35好朋友争夺战03不理米小圈.mp3'},
+{title : '',singer : '1400 姜小牙上学记36好朋友争夺战04好朋友三人组',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1400 姜小牙上学记36好朋友争夺战04好朋友三人组.mp3'},
+{title : '',singer : '1401 姜小牙上学记37好朋友争夺战05铁头不见了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1401 姜小牙上学记37好朋友争夺战05铁头不见了.mp3'},
+{title : '',singer : '1402 姜小牙上学记38好朋友争夺战06铁头很危险',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1402 姜小牙上学记38好朋友争夺战06铁头很危险.mp3'},
+{title : '',singer : '1403 姜小牙上学记39好朋友争夺战07坏同桌',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1403 姜小牙上学记39好朋友争夺战07坏同桌.mp3'},
+{title : '',singer : '1404 姜小牙上学记40好朋友争夺战08不说谎的约定',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1404 姜小牙上学记40好朋友争夺战08不说谎的约定.mp3'},
+{title : '',singer : '1405 姜小牙上学记41好朋友争夺战09爱跳皮筋的铁头',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1405 姜小牙上学记41好朋友争夺战09爱跳皮筋的铁头.mp3'},
+{title : '',singer : '1406 姜小牙上学记42好朋友争夺战10周末不愉快',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1406 姜小牙上学记42好朋友争夺战10周末不愉快.mp3'},
+{title : '',singer : '1407 姜小牙上学记43好朋友争夺战11要把铁头夺回来',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1407 姜小牙上学记43好朋友争夺战11要把铁头夺回来.mp3'},
+{title : '',singer : '1408 姜小牙上学记44好朋友争夺战12女生联盟',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1408 姜小牙上学记44好朋友争夺战12女生联盟.mp3'},
+{title : '',singer : '1409 姜小牙上学记45好朋友争夺战13男生跳皮筋大赛',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1409 姜小牙上学记45好朋友争夺战13男生跳皮筋大赛.mp3'},
+{title : '',singer : '1410 姜小牙上学记46老师的法宝01幸好有你',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1410 姜小牙上学记46老师的法宝01幸好有你.mp3'},
+{title : '',singer : '1411 姜小牙上学记47老师的法宝02最爱的语文课',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1411 姜小牙上学记47老师的法宝02最爱的语文课.mp3'},
+{title : '',singer : '1412 姜小牙上学记48老师的法宝03逃过一劫',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1412 姜小牙上学记48老师的法宝03逃过一劫.mp3'},
+{title : '',singer : '1413 姜小牙上学记49老师的法宝04倒霉的米小圈',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1413 姜小牙上学记49老师的法宝04倒霉的米小圈.mp3'},
+{title : '',singer : '1414 姜小牙上学记50老师的法宝05不许出去玩',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1414 姜小牙上学记50老师的法宝05不许出去玩.mp3'},
+{title : '',singer : '1415 姜小牙上学记51老师的法宝06小学生世界记录',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1415 姜小牙上学记51老师的法宝06小学生世界记录.mp3'},
+{title : '',singer : '1416 姜小牙上学记52老师的法宝07拯救好朋友铁头',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1416 姜小牙上学记52老师的法宝07拯救好朋友铁头.mp3'},
+{title : '',singer : '1417 姜小牙上学记53老师的法宝08学习救援团',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1417 姜小牙上学记53老师的法宝08学习救援团.mp3'},
+{title : '',singer : '1418 姜小牙上学记54老师的法宝09美食的诱惑',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1418 姜小牙上学记54老师的法宝09美食的诱惑.mp3'},
+{title : '',singer : '1419 姜小牙上学记55老师的法宝10美食学习法',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1419 姜小牙上学记55老师的法宝10美食学习法.mp3'},
+{title : '',singer : '1420 姜小牙上学记56老师的法宝11爱炫耀的铁头',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1420 姜小牙上学记56老师的法宝11爱炫耀的铁头.mp3'},
+{title : '',singer : '1421 姜小牙上学记57老师的法宝12家教来了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1421 姜小牙上学记57老师的法宝12家教来了.mp3'},
+{title : '',singer : '1422 姜小牙上学记58老师的法宝13讨厌的学习法',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1422 姜小牙上学记58老师的法宝13讨厌的学习法.mp3'},
+{title : '',singer : '1423 姜小牙上学记59老师的法宝14考前准备',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1423 姜小牙上学记59老师的法宝14考前准备.mp3'},
+{title : '',singer : '1424 姜小牙上学记60老师的法宝15特别的惊喜',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1424 姜小牙上学记60老师的法宝15特别的惊喜.mp3'},
+{title : '',singer : '1425 姜小牙上学记61老师的法宝16我来做家教',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1425 姜小牙上学记61老师的法宝16我来做家教.mp3'}
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

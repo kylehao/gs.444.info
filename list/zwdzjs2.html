@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1941 植物大战僵尸之植物侦探团01创意社团征集',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1941 植物大战僵尸之植物侦探团01创意社团征集.mp3'},
+{title : '',singer : '1942 植物大战僵尸之植物侦探团02遭遇质疑',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1942 植物大战僵尸之植物侦探团02遭遇质疑.mp3'},
+{title : '',singer : '1943 植物大战僵尸之植物侦探团03推理大显身手上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1943 植物大战僵尸之植物侦探团03推理大显身手上.mp3'},
+{title : '',singer : '1944 植物大战僵尸之植物侦探团04推理大显身手下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1944 植物大战僵尸之植物侦探团04推理大显身手下.mp3'},
+{title : '',singer : '1945 植物大战僵尸之植物侦探团05第一名成员',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1945 植物大战僵尸之植物侦探团05第一名成员.mp3'},
+{title : '',singer : '1946 植物大战僵尸之植物侦探团06三人侦探团',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1946 植物大战僵尸之植物侦探团06三人侦探团.mp3'},
+{title : '',singer : '1947 植物大战僵尸之植物侦探团07第一个案件出现',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1947 植物大战僵尸之植物侦探团07第一个案件出现.mp3'},
+{title : '',singer : '1948 植物大战僵尸之植物侦探团08案情回溯中',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1948 植物大战僵尸之植物侦探团08案情回溯中.mp3'},
+{title : '',singer : '1949 植物大战僵尸之植物侦探团09可疑的僵尸二人组',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1949 植物大战僵尸之植物侦探团09可疑的僵尸二人组.mp3'},
+{title : '',singer : '1950 植物大战僵尸之植物侦探团10引发了争端',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1950 植物大战僵尸之植物侦探团10引发了争端.mp3'},
+{title : '',singer : '1951 植物大战僵尸之植物侦探团11警长和大法官',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1951 植物大战僵尸之植物侦探团11警长和大法官.mp3'},
+{title : '',singer : '1952 植物大战僵尸之植物侦探团12公开庭审上',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1952 植物大战僵尸之植物侦探团12公开庭审上.mp3'},
+{title : '',singer : '1953 植物大战僵尸之植物侦探团13公开庭审下',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1953 植物大战僵尸之植物侦探团13公开庭审下.mp3'},
+{title : '',singer : '1954 植物大战僵尸之植物侦探团14豌豆射手出马',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1954 植物大战僵尸之植物侦探团14豌豆射手出马.mp3'},
+{title : '',singer : '1955 植物大战僵尸之植物侦探团15反客为主',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1955 植物大战僵尸之植物侦探团15反客为主.mp3'},
+{title : '',singer : '1956 植物大战僵尸之植物侦探团16精彩的攻防对垒',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1956 植物大战僵尸之植物侦探团16精彩的攻防对垒.mp3'},
+{title : '',singer : '1957 植物大战僵尸之植物侦探团17校长的真实身份',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1957 植物大战僵尸之植物侦探团17校长的真实身份.mp3'},
+{title : '',singer : '1958 植物大战僵尸之植物侦探团18戒指找到了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1958 植物大战僵尸之植物侦探团18戒指找到了.mp3'},
+{title : '',singer : '1959 植物大战僵尸之植物侦探团19推理的过程',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1959 植物大战僵尸之植物侦探团19推理的过程.mp3'},
+{title : '',singer : '1960 植物大战僵尸之植物侦探团20坚果继续努力',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1960 植物大战僵尸之植物侦探团20坚果继续努力.mp3'},
+{title : '',singer : '1961 植物大战僵尸之植物侦探团21太阳神僵尸的吆喝',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1961 植物大战僵尸之植物侦探团21太阳神僵尸的吆喝.mp3'},
+{title : '',singer : '1962 植物大战僵尸之植物侦探团22一喝就聪明营养液',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1962 植物大战僵尸之植物侦探团22一喝就聪明营养液.mp3'},
+{title : '',singer : '1963 植物大战僵尸之植物侦探团23铁丝能点燃',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1963 植物大战僵尸之植物侦探团23铁丝能点燃.mp3'},
+{title : '',singer : '1964 植物大战僵尸之植物侦探团24蚂蚁会写字',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1964 植物大战僵尸之植物侦探团24蚂蚁会写字.mp3'},
+{title : '',singer : '1965 植物大战僵尸之植物侦探团25书费变葫芦',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1965 植物大战僵尸之植物侦探团25书费变葫芦.mp3'},
+{title : '',singer : '1966 植物大战僵尸之植物侦探团26又来十个宝葫芦',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1966 植物大战僵尸之植物侦探团26又来十个宝葫芦.mp3'},
+{title : '',singer : '1967 植物大战僵尸之植物侦探团27复制实验',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1967 植物大战僵尸之植物侦探团27复制实验.mp3'},
+{title : '',singer : '1968 植物大战僵尸之植物侦探团28案件告破',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1968 植物大战僵尸之植物侦探团28案件告破.mp3'},
+{title : '',singer : '1969 植物大战僵尸之植物侦探团29同一事件不同版本',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1969 植物大战僵尸之植物侦探团29同一事件不同版本.mp3'},
+{title : '',singer : '1970 植物大战僵尸之植物侦探团30丁香几个花瓣',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1970 植物大战僵尸之植物侦探团30丁香几个花瓣.mp3'},
+{title : '',singer : '1971 植物大战僵尸之植物侦探团31自由市场上的法庭',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1971 植物大战僵尸之植物侦探团31自由市场上的法庭.mp3'},
+{title : '',singer : '1972 植物大战僵尸之植物侦探团32油能溶于水吗',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1972 植物大战僵尸之植物侦探团32油能溶于水吗.mp3'},
+{title : '',singer : '1973 植物大战僵尸之植物侦探团33金币的真正主人',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1973 植物大战僵尸之植物侦探团33金币的真正主人.mp3'},
+{title : '',singer : '1974 植物大战僵尸之植物侦探团34正义不求回报',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1974 植物大战僵尸之植物侦探团34正义不求回报.mp3'}
+
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

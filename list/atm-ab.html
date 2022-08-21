@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1048 欧布奥特曼第01集夕阳3的浪客1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1048 欧布奥特曼第01集夕阳3的浪客1.mp3'},
+{title : '',singer : '1049 欧布奥特曼第01集夕阳3的浪客3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1049 欧布奥特曼第01集夕阳3的浪客3.mp3'},
+{title : '',singer : '1050 欧布奥特曼第02集土块魔王1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1050 欧布奥特曼第02集土块魔王1.mp3'},
+{title : '',singer : '1051 欧布奥特曼第02集土块魔王3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1051 欧布奥特曼第02集土块魔王3.mp3'},
+{title : '',singer : '1052 欧布奥特曼第03集怪兽水域1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1052 欧布奥特曼第03集怪兽水域1.mp3'},
+{title : '',singer : '1053 欧布奥特曼第03集怪兽水域3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1053 欧布奥特曼第03集怪兽水域3.mp3'},
+{title : '',singer : '1054 欧布奥特曼第04集盛夏天空注意防火1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1054 欧布奥特曼第04集盛夏天空注意防火1.mp3'},
+{title : '',singer : '1055 欧布奥特曼第04集盛夏天空注意防火3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1055 欧布奥特曼第04集盛夏天空注意防火3.mp3'},
+{title : '',singer : '1056 欧布奥特曼第05集不再逃避的内心1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1056 欧布奥特曼第05集不再逃避的内心1.mp3'},
+{title : '',singer : '1057 欧布奥特曼第05集不再逃避的内心3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1057 欧布奥特曼第05集不再逃避的内心3.mp3'},
+{title : '',singer : '1058 欧布奥特曼第06集不可踏入的森林1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1058 欧布奥特曼第06集不可踏入的森林1.mp3'},
+{title : '',singer : '1059 欧布奥特曼第06集不可踏入的森林3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1059 欧布奥特曼第06集不可踏入的森林3.mp3'},
+{title : '',singer : '1060 欧布奥特曼第07集迷雾2的明日1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1060 欧布奥特曼第07集迷雾2的明日1.mp3'},
+{title : '',singer : '1061 欧布奥特曼第07集迷雾2的明日3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1061 欧布奥特曼第07集迷雾2的明日3.mp3'},
+{title : '',singer : '1062 欧布奥特曼第08集都市内的半鱼人1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1062 欧布奥特曼第08集都市内的半鱼人1.mp3'},
+{title : '',singer : '1063 欧布奥特曼第08集都市内的半鱼人3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1063 欧布奥特曼第08集都市内的半鱼人3.mp3'},
+{title : '',singer : '1064 欧布奥特曼第09集虚假的蓝调1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1064 欧布奥特曼第09集虚假的蓝调1.mp3'},
+{title : '',singer : '1065 欧布奥特曼第09集虚假的蓝调3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1065 欧布奥特曼第09集虚假的蓝调3.mp3'},
+{title : '',singer : '1066 欧布奥特曼第10集伽古拉身亡1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1066 欧布奥特曼第10集伽古拉身亡1.mp3'},
+{title : '',singer : '1067 欧布奥特曼第10集伽古拉身亡3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1067 欧布奥特曼第10集伽古拉身亡3.mp3'},
+{title : '',singer : '1068 欧布奥特曼第11集糟糕妈妈来了1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1068 欧布奥特曼第11集糟糕妈妈来了1.mp3'},
+{title : '',singer : '1069 欧布奥特曼第11集糟糕妈妈来了3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1069 欧布奥特曼第11集糟糕妈妈来了3.mp3'},
+{title : '',singer : '1070 欧布奥特曼第12集黑暗之王的祝福1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1070 欧布奥特曼第12集黑暗之王的祝福1.mp3'},
+{title : '',singer : '1071 欧布奥特曼第12集黑暗之王的祝福3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1071 欧布奥特曼第12集黑暗之王的祝福3.mp3'},
+{title : '',singer : '1072 欧布奥特曼第13集内心大扫除1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1072 欧布奥特曼第13集内心大扫除1.mp3'},
+{title : '',singer : '1073 欧布奥特曼第13集内心大扫除3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1073 欧布奥特曼第13集内心大扫除3.mp3'},
+{title : '',singer : '1074 欧布奥特曼第14集失控的正义1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1074 欧布奥特曼第14集失控的正义1.mp3'},
+{title : '',singer : '1075 欧布奥特曼第14集失控的正义3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1075 欧布奥特曼第14集失控的正义3.mp3'},
+{title : '',singer : '1076 欧布奥特曼第15集永不言败1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1076 欧布奥特曼第15集永不言败1.mp3'},
+{title : '',singer : '1077 欧布奥特曼第15集永不言败3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1077 欧布奥特曼第15集永不言败3.mp3'},
+{title : '',singer : '1078 欧布奥特曼第16集无法忘怀的地方1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1078 欧布奥特曼第16集无法忘怀的地方1.mp3'},
+{title : '',singer : '1079 欧布奥特曼第16集无法忘怀的地方3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1079 欧布奥特曼第16集无法忘怀的地方3.mp3'},
+{title : '',singer : '1080 欧布奥特曼第17集圣剑复活1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1080 欧布奥特曼第17集圣剑复活1.mp3'},
+{title : '',singer : '1081 欧布奥特曼第17集圣剑复活3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1081 欧布奥特曼第17集圣剑复活3.mp3'},
+{title : '',singer : '1082 欧布奥特曼第18集硬汉涩川1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1082 欧布奥特曼第18集硬汉涩川1.mp3'},
+{title : '',singer : '1083 欧布奥特曼第18集硬汉涩川2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1083 欧布奥特曼第18集硬汉涩川2.mp3'},
+{title : '',singer : '1084 欧布奥特曼第18集硬汉涩川3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1084 欧布奥特曼第18集硬汉涩川3.mp3'},
+{title : '',singer : '1085 欧布奥特曼第19集心有恶鬼1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1085 欧布奥特曼第19集心有恶鬼1.mp3'},
+{title : '',singer : '1086 欧布奥特曼第19集心有恶鬼2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1086 欧布奥特曼第19集心有恶鬼2.mp3'},
+{title : '',singer : '1087 欧布奥特曼第19集心有恶鬼3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1087 欧布奥特曼第19集心有恶鬼3.mp3'},
+{title : '',singer : '1088 欧布奥特曼第20集复仇的导火索1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1088 欧布奥特曼第20集复仇的导火索1.mp3'},
+{title : '',singer : '1089 欧布奥特曼第20集复仇的导火索2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1089 欧布奥特曼第20集复仇的导火索2.mp3'},
+{title : '',singer : '1090 欧布奥特曼第20集复仇的导火索3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1090 欧布奥特曼第20集复仇的导火索3.mp3'},
+{title : '',singer : '1091 欧布奥特曼第21集蓝色发带的少女1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1091 欧布奥特曼第21集蓝色发带的少女1.mp3'},
+{title : '',singer : '1092 欧布奥特曼第21集蓝色发带的少女2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1092 欧布奥特曼第21集蓝色发带的少女2.mp3'},
+{title : '',singer : '1093 欧布奥特曼第21集蓝色发带的少女3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1093 欧布奥特曼第21集蓝色发带的少女3.mp3'},
+{title : '',singer : '1094 欧布奥特曼第22集地图1找不到的咖啡厅1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1094 欧布奥特曼第22集地图1找不到的咖啡厅1.mp3'},
+{title : '',singer : '1095 欧布奥特曼第22集地图1找不到的咖啡厅2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1095 欧布奥特曼第22集地图1找不到的咖啡厅2.mp3'},
+{title : '',singer : '1096 欧布奥特曼第22集地图1找不到的咖啡厅3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1096 欧布奥特曼第22集地图1找不到的咖啡厅3.mp3'},
+{title : '',singer : '1097 欧布奥特曼第23集黑暗之刃1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1097 欧布奥特曼第23集黑暗之刃1.mp3'},
+{title : '',singer : '1098 欧布奥特曼第23集黑暗之刃2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1098 欧布奥特曼第23集黑暗之刃2.mp3'},
+{title : '',singer : '1099 欧布奥特曼第23集黑暗之刃3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1099 欧布奥特曼第23集黑暗之刃3.mp3'},
+{title : '',singer : '1100 欧布奥特曼第24集逆袭的超大魔王兽1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1100 欧布奥特曼第24集逆袭的超大魔王兽1.mp3'},
+{title : '',singer : '1101 欧布奥特曼第24集逆袭的超大魔王兽2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1101 欧布奥特曼第24集逆袭的超大魔王兽2.mp3'},
+{title : '',singer : '1102 欧布奥特曼第24集逆袭的超大魔王兽3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1102 欧布奥特曼第24集逆袭的超大魔王兽3.mp3'},
+{title : '',singer : '1103 欧布奥特曼第25集漂泊的太阳1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1103 欧布奥特曼第25集漂泊的太阳1.mp3'},
+{title : '',singer : '1104 欧布奥特曼第25集漂泊的太阳2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1104 欧布奥特曼第25集漂泊的太阳2.mp3'},
+{title : '',singer : '1105 欧布奥特曼第25集漂泊的太阳3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1105 欧布奥特曼第25集漂泊的太阳3.mp3'}
+
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

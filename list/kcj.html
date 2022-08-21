@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1334 法布尔昆虫记01猎捕象鼻虫',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1334 法布尔昆虫记01猎捕象鼻虫.mp3'},
+{title : '',singer : '1335 法布尔昆虫记02手术专家砂泥蜂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1335 法布尔昆虫记02手术专家砂泥蜂.mp3'},
+{title : '',singer : '1336 法布尔昆虫记03战争狂红蚂蚁',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1336 法布尔昆虫记03战争狂红蚂蚁.mp3'},
+{title : '',singer : '1337 法布尔昆虫记04嗜尸者麻蝇1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1337 法布尔昆虫记04嗜尸者麻蝇1.mp3'},
+{title : '',singer : '1338 法布尔昆虫记05嗜尸者麻蝇2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1338 法布尔昆虫记05嗜尸者麻蝇2.mp3'},
+{title : '',singer : '1339 法布尔昆虫记06地下毒王狼蛛1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1339 法布尔昆虫记06地下毒王狼蛛1.mp3'},
+{title : '',singer : '1340 法布尔昆虫记07地下毒王狼蛛2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1340 法布尔昆虫记07地下毒王狼蛛2.mp3'},
+{title : '',singer : '1341 法布尔昆虫记08天才建筑师圆网蛛',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1341 法布尔昆虫记08天才建筑师圆网蛛.mp3'},
+{title : '',singer : '1342 法布尔昆虫记09粪金龟1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1342 法布尔昆虫记09粪金龟1.mp3'},
+{title : '',singer : '1343 法布尔昆虫记10粪金龟2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1343 法布尔昆虫记10粪金龟2.mp3'},
+{title : '',singer : '1344 法布尔昆虫记11粪金龟3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1344 法布尔昆虫记11粪金龟3.mp3'},
+{title : '',singer : '1345 法布尔昆虫记12粪金龟4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1345 法布尔昆虫记12粪金龟4.mp3'},
+{title : '',singer : '1346 法布尔昆虫记13神奇的隐士蝎子1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1346 法布尔昆虫记13神奇的隐士蝎子1.mp3'},
+{title : '',singer : '1347 法布尔昆虫记14神奇的隐士蝎子2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1347 法布尔昆虫记14神奇的隐士蝎子2.mp3'},
+{title : '',singer : '1348 法布尔昆虫记15神奇的隐士蝎子3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1348 法布尔昆虫记15神奇的隐士蝎子3.mp3'},
+{title : '',singer : '1349 法布尔昆虫记16神奇的隐士蝎子4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1349 法布尔昆虫记16神奇的隐士蝎子4.mp3'},
+{title : '',singer : '1350 法布尔昆虫记17菜粉蝶1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1350 法布尔昆虫记17菜粉蝶1.mp3'},
+{title : '',singer : '1351 法布尔昆虫记18菜粉蝶2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1351 法布尔昆虫记18菜粉蝶2.mp3'},
+{title : '',singer : '1352 法布尔昆虫记19菜粉蝶3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1352 法布尔昆虫记19菜粉蝶3.mp3'},
+{title : '',singer : '1353 法布尔昆虫记20装死专家步甲1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1353 法布尔昆虫记20装死专家步甲1.mp3'},
+{title : '',singer : '1354 法布尔昆虫记21装死专家步甲2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1354 法布尔昆虫记21装死专家步甲2.mp3'},
+{title : '',singer : '1355 法布尔昆虫记22殡葬师埋葬虫',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1355 法布尔昆虫记22殡葬师埋葬虫.mp3'},
+{title : '',singer : '1356 法布尔昆虫记23夏日音乐家蝉1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1356 法布尔昆虫记23夏日音乐家蝉1.mp3'},
+{title : '',singer : '1357 法布尔昆虫记24夏日音乐家蝉2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1357 法布尔昆虫记24夏日音乐家蝉2.mp3'},
+{title : '',singer : '1358 法布尔昆虫记25夏日音乐家蝉3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1358 法布尔昆虫记25夏日音乐家蝉3.mp3'},
+{title : '',singer : '1359 法布尔昆虫记26夏日音乐家蝉4',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1359 法布尔昆虫记26夏日音乐家蝉4.mp3'},
+{title : '',singer : '1360 法布尔昆虫记27神奇麻醉师飞蝗泥峰1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1360 法布尔昆虫记27神奇麻醉师飞蝗泥峰1.mp3'},
+{title : '',singer : '1361 法布尔昆虫记28神奇麻醉师飞蝗泥峰2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1361 法布尔昆虫记28神奇麻醉师飞蝗泥峰2.mp3'},
+{title : '',singer : '1362 法布尔昆虫记29神奇麻醉师飞蝗泥峰3',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1362 法布尔昆虫记29神奇麻醉师飞蝗泥峰3.mp3'},
+{title : '',singer : '1363 法布尔昆虫记30霸王镰刀手螳螂',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1363 法布尔昆虫记30霸王镰刀手螳螂.mp3'},
+{title : '',singer : '1364 法布尔昆虫记31摇篮入侵者寄生蜂1',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1364 法布尔昆虫记31摇篮入侵者寄生蜂1.mp3'},
+{title : '',singer : '1365 法布尔昆虫记32摇篮入侵者寄生蜂2',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1365 法布尔昆虫记32摇篮入侵者寄生蜂2.mp3'}
+
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>听松阁在线听音乐 - 444.info</title>
+
+<link rel="stylesheet" href="css/smusic.css">
+
+</head>
+<body background="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/odjcc/bg2.jpg">
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><b><small>...</small><small>...</small></b></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a><br>
+               
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+
+<script src="js/smusic.min.js"></script>
+<script>
+var musicList = [
+{title : '',singer : '1683 米小圈上学记03来自未来的我01可怕的暑假作业',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1683 米小圈上学记03来自未来的我01可怕的暑假作业.mp3'},
+{title : '',singer : '1684 米小圈上学记04来自未来的我02新学期新气象',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1684 米小圈上学记04来自未来的我02新学期新气象.mp3'},
+{title : '',singer : '1685 米小圈上学记05来自未来的我03民主选同桌',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1685 米小圈上学记05来自未来的我03民主选同桌.mp3'},
+{title : '',singer : '1686 米小圈上学记06来自未来的我04美术班的小胖子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1686 米小圈上学记06来自未来的我04美术班的小胖子.mp3'},
+{title : '',singer : '1687 米小圈上学记07来自未来的我05一整天都倒霉',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1687 米小圈上学记07来自未来的我05一整天都倒霉.mp3'},
+{title : '',singer : '1688 米小圈上学记08来自未来的我06小舅舅来了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1688 米小圈上学记08来自未来的我06小舅舅来了.mp3'},
+{title : '',singer : '1689 米小圈上学记09来自未来的我07一封奇怪的信',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1689 米小圈上学记09来自未来的我07一封奇怪的信.mp3'},
+{title : '',singer : '1690 米小圈上学记10来自未来的我08我写给米大圈的信',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1690 米小圈上学记10来自未来的我08我写给米大圈的信.mp3'},
+{title : '',singer : '1691 米小圈上学记12来自未来的我09又一封古怪的信',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1691 米小圈上学记12来自未来的我09又一封古怪的信.mp3'},
+{title : '',singer : '1692 米小圈上学记13来自未来的我10三条预言',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1692 米小圈上学记13来自未来的我10三条预言.mp3'},
+{title : '',singer : '1693 米小圈上学记14来自未来的我11得意的小胖子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1693 米小圈上学记14来自未来的我11得意的小胖子.mp3'},
+{title : '',singer : '1694 米小圈上学记15来自未来的我12开始努力',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1694 米小圈上学记15来自未来的我12开始努力.mp3'},
+{title : '',singer : '1695 米小圈上学记16来自未来的我13米大圈的鼓励',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1695 米小圈上学记16来自未来的我13米大圈的鼓励.mp3'},
+{title : '',singer : '1696 米小圈上学记17来自未来的我14绘画比赛',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1696 米小圈上学记17来自未来的我14绘画比赛.mp3'},
+{title : '',singer : '1697 米小圈上学记18来自未来的我15弥天大谎',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1697 米小圈上学记18来自未来的我15弥天大谎.mp3'},
+{title : '',singer : '1698 米小圈上学记19来自未来的我16不想理你',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1698 米小圈上学记19来自未来的我16不想理你.mp3'},
+{title : '',singer : '1699 米小圈上学记20来自未来的我17你真的是米大圈吗',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1699 米小圈上学记20来自未来的我17你真的是米大圈吗.mp3'},
+{title : '',singer : '1700 米小圈上学记21来自未来的我18获奖',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1700 米小圈上学记21来自未来的我18获奖.mp3'},
+{title : '',singer : '1701 米小圈上学记23我的同桌是卧底01我的同桌是卧底',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1701 米小圈上学记23我的同桌是卧底01我的同桌是卧底.mp3'},
+{title : '',singer : '1702 米小圈上学记24我的同桌是卧底02针锋相对',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1702 米小圈上学记24我的同桌是卧底02针锋相对.mp3'},
+{title : '',singer : '1703 米小圈上学记25我的同桌是卧底03握手言和',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1703 米小圈上学记25我的同桌是卧底03握手言和.mp3'},
+{title : '',singer : '1704 米小圈上学记26我的同桌是卧底04李黎的愿望',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1704 米小圈上学记26我的同桌是卧底04李黎的愿望.mp3'},
+{title : '',singer : '1705 米小圈上学记27我的同桌是卧底05我是小书虫',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1705 米小圈上学记27我的同桌是卧底05我是小书虫.mp3'},
+{title : '',singer : '1706 米小圈上学记28我的同桌是卧底06公司破产了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1706 米小圈上学记28我的同桌是卧底06公司破产了.mp3'},
+{title : '',singer : '1707 米小圈上学记30我的同桌是卧底08我爱写小说',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1707 米小圈上学记30我的同桌是卧底08我爱写小说.mp3'},
+{title : '',singer : '1708 米小圈上学记31我的同桌是卧底07我的名字我做主',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1708 米小圈上学记31我的同桌是卧底07我的名字我做主.mp3'},
+{title : '',singer : '1709 米小圈上学记32我的同桌是卧底09米小圈奇遇记',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1709 米小圈上学记32我的同桌是卧底09米小圈奇遇记.mp3'},
+{title : '',singer : '1710 米小圈上学记33我的同桌是卧底10快考试了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1710 米小圈上学记33我的同桌是卧底10快考试了.mp3'},
+{title : '',singer : '1711 米小圈上学记34我的同桌是卧底11新年联欢会',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1711 米小圈上学记34我的同桌是卧底11新年联欢会.mp3'},
+{title : '',singer : '1712 米小圈上学记35我的同桌是卧底12补习功课',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1712 米小圈上学记35我的同桌是卧底12补习功课.mp3'},
+{title : '',singer : '1713 米小圈上学记36我的同桌是卧底13考试的日子',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1713 米小圈上学记36我的同桌是卧底13考试的日子.mp3'},
+{title : '',singer : '1714 米小圈上学记37我的同桌是卧底14超越李黎',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1714 米小圈上学记37我的同桌是卧底14超越李黎.mp3'},
+{title : '',singer : '1715 米小圈上学记39班里有个小神童01一个小朋友',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1715 米小圈上学记39班里有个小神童01一个小朋友.mp3'},
+{title : '',singer : '1716 米小圈上学记40班里有个小神童02智商测试风波',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1716 米小圈上学记40班里有个小神童02智商测试风波.mp3'},
+{title : '',singer : '1717 米小圈上学记41班里有个小神童03挑战小神童',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1717 米小圈上学记41班里有个小神童03挑战小神童.mp3'},
+{title : '',singer : '1718 米小圈上学记42班里有个小神童04小神童病了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1718 米小圈上学记42班里有个小神童04小神童病了.mp3'},
+{title : '',singer : '1719 米小圈上学记44班里有个小神童05最爱的体育课',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1719 米小圈上学记44班里有个小神童05最爱的体育课.mp3'},
+{title : '',singer : '1720 米小圈上学记45班里有个小神童06李黎姐姐',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1720 米小圈上学记45班里有个小神童06李黎姐姐.mp3'},
+{title : '',singer : '1721 米小圈上学记47班里有个小神童07真的失踪了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1721 米小圈上学记47班里有个小神童07真的失踪了.mp3'},
+{title : '',singer : '1722 米小圈上学记48班里有个小神童08成语接龙',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1722 米小圈上学记48班里有个小神童08成语接龙.mp3'},
+{title : '',singer : '1723 米小圈上学记49班里有个小神童09助人为乐',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1723 米小圈上学记49班里有个小神童09助人为乐.mp3'},
+{title : '',singer : '1724 米小圈上学记50班里有个小神童10焕然一新',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1724 米小圈上学记50班里有个小神童10焕然一新.mp3'},
+{title : '',singer : '1725 米小圈上学记52遇见猫先生01小心愚人节',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1725 米小圈上学记52遇见猫先生01小心愚人节.mp3'},
+{title : '',singer : '1726 米小圈上学记53遇见猫先生02黑眼镜叔叔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1726 米小圈上学记53遇见猫先生02黑眼镜叔叔.mp3'},
+{title : '',singer : '1727 米小圈上学记54遇见猫先生03新颖的作文',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1727 米小圈上学记54遇见猫先生03新颖的作文.mp3'},
+{title : '',singer : '1728 米小圈上学记55遇见猫先生04莫老师的表扬',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1728 米小圈上学记55遇见猫先生04莫老师的表扬.mp3'},
+{title : '',singer : '1729 米小圈上学记56遇见猫先生05猫先生的新文章',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1729 米小圈上学记56遇见猫先生05猫先生的新文章.mp3'},
+{title : '',singer : '1730 米小圈上学记58遇见猫先生06伤离别',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1730 米小圈上学记58遇见猫先生06伤离别.mp3'},
+{title : '',singer : '1731 米小圈上学记60遇见猫先生07米小圈拍卖会',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1731 米小圈上学记60遇见猫先生07米小圈拍卖会.mp3'},
+{title : '',singer : '1732 米小圈上学记61遇见猫先生08出尔反尔',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1732 米小圈上学记61遇见猫先生08出尔反尔.mp3'},
+{title : '',singer : '1733 米小圈上学记62遇见猫先生09奇怪的事',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1733 米小圈上学记62遇见猫先生09奇怪的事.mp3'},
+{title : '',singer : '1734 米小圈上学记63遇见猫先生10猫先生发财了',cover  : '',src: 'http://music.asia.ga/sharepointseu/故事播放器/红歌/1734 米小圈上学记63遇见猫先生10猫先生发财了.mp3'}
+
+
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+<div style="text-align:center;">
+<p>在线音乐：<a href="http://www.444.info/" target="_blank">听松阁</a></p>
+</div>
+</div>
+</body>
+</html>
